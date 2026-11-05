@@ -4,7 +4,7 @@
 
 **An AI-powered workspace for investigation, research, engineering, verification, and human–AI collaboration.**
 
-[Live Website](https://13-244-118-60.sslip.io/) | [GitHub Repository](https://github.com/sharmainelerato-glitch/VERYNTH)
+[GitHub Repository](https://github.com/sharmainelerato-glitch/VERYNTH)
 
 ---
 
@@ -111,7 +111,7 @@ VERYNTH emphasizes reviewing evidence, identifying uncertainty, and distinguishi
 
 ## Live Deployment
 
-**Website:** https://13-244-118-60.sslip.io/
+
 
 VERYNTH is deployed on Amazon EC2 using FastAPI and Nginx.
 
