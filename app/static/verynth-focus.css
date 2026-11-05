@@ -1,0 +1,43 @@
+/* VERYNTH Focus Workspace: non-destructive, accessible progressive disclosure. */
+:root{--vy-night:#041a20;--vy-teal:#27d6c5;--vy-muted:#91bcb8;--vy-line:rgba(73,211,197,.24)}
+body.vy-focus{background:#041a20;color:#e7f7f5}
+.vy-focus .side{background:linear-gradient(180deg,#04151b,#072b32)!important;border-right:1px solid #1c5557!important;color:#e9f8f6}
+.vy-focus .side .brand,.vy-focus .side h4{color:#d9faf4}.vy-focus .side .nav,.vy-focus .side .projects button{color:#c8e7e3}
+.vy-focus .side .nav.active,.vy-focus .side .nav:hover,.vy-focus .side .projects button:hover,.vy-focus .side .projects button.active{background:#0c4549!important;color:#ebfffd}
+.vy-focus .main{background:radial-gradient(ellipse at 75% -10%,rgba(6,134,125,.25),transparent 52%),#041a20;min-height:100vh}
+.vy-focus .hero h1,.vy-focus .workhead h2,.vy-focus h2,.vy-focus h3{color:#eaf9f7}
+.vy-focus .subtitle,.vy-focus .muted,.vy-focus .subtle{color:#a2c6c3}
+.vy-focus .card,.vy-focus .lab,.vy-focus .workspace,.vy-focus .querybar,.vy-focus .sources,.vy-focus .conversation,.vy-focus .message,.vy-focus .drop,.vy-focus .actions button,.vy-focus .secondarybtn{background:linear-gradient(135deg,#092e34,#07242b)!important;color:#e7f8f5!important;border-color:var(--vy-line)!important}
+.vy-focus input,.vy-focus textarea,.vy-focus select{background:#0b353b!important;color:#eafaf7!important;border:1px solid #286b6e!important}
+.vy-focus input::placeholder,.vy-focus textarea::placeholder{color:#b1cfca}
+.vy-focus .pill,.vy-focus .note{background:#0e4142!important;color:#c8fff4!important;border-color:#286b6e!important}
+.vy-focus .tabs{border-bottom-color:#215257}.vy-focus .tabs button{color:#b0dbd7}.vy-focus .tabs button.active{color:#56efdb;border-bottom-color:#56efdb}
+.vy-focus .primarybtn,.vy-focus .round.send,.vy-focus .vy-action{background:linear-gradient(135deg,#087d7b,#14a99d);color:white;border:1px solid #45e5cf}
+.vy-focus .sourceItem,.vy-focus .sources{border-color:#245659}.vy-focus a{color:#67e8d4}
+.vy-focus .workhead{padding:17px 0;flex-wrap:wrap}.vy-focus #projectView>.n27-hub{display:none!important}
+.vy-focus #projectView.vy-tools-open>.n27-hub{display:block!important}
+.vy-focus #projectView .n27-hubhead{background:#092e34;border-color:var(--vy-line);color:#dffff8}
+.vy-focus #projectView .n27-hubhead h3{color:#e7faf7}
+.vy-focus .vy-hidden,.vy-focus [data-vy-hide="1"]{display:none!important}
+.vy-tool-picker{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 18px;background:linear-gradient(125deg,#0b383b,#062a31);border:1px solid var(--vy-line);border-radius:17px;margin:16px 0}
+.vy-tool-picker label{font-weight:700;white-space:nowrap;color:#d9fff6}.vy-tool-picker input{min-width:160px;flex:1;padding:11px 13px;border-radius:10px}.vy-tool-picker select{width:min(360px,100%);padding:11px;border-radius:10px}
+.vy-tool-picker button,.vy-back,.vy-navtabs button{border:1px solid #328b85;background:#0a464a;color:#ebfffb;border-radius:12px;padding:10px 16px;cursor:pointer}
+.vy-back{display:inline-flex;gap:8px;align-items:center;text-decoration:none;margin:5px 10px 18px 0;font-weight:650}
+.vy-empty-tool{color:#a6ceca;font-size:12px}
+.vy-focus #n30-pane-overview>[data-vy-tool]{display:none!important}.vy-focus #n30-pane-overview>[data-vy-tool].vy-selected-tool{display:block!important}
+.vy-focus #nessIntelligenceHub [data-vy-tool]{display:none!important}.vy-focus #nessIntelligenceHub [data-vy-tool].vy-selected-tool{display:block!important}
+.vy-focus .vy-navtabs{display:flex;gap:9px;flex-wrap:wrap;margin:5px 0 24px}.vy-focus .vy-navtabs button[aria-selected="true"]{background:#0f7c7a;box-shadow:inset 0 0 0 1px #6de5d6}
+.vy-focus .vy-team-shell{background:#041a20;color:#edf9f7;min-height:100vh}.vy-focus header.vy-team-header{background:#051e26!important}
+.vy-focus .vy-team-shell .card{background:#0a3237!important;border:1px solid #23595b!important;color:#e7f8f5!important}
+.vy-focus .vy-team-shell .card h3,.vy-focus .vy-team-shell .card h2{color:#f0fffc}
+.vy-focus .vy-team-shell small{color:#a9cfca}
+.vy-focus .vy-team-shell button:not(.vy-navtabs button){max-width:100%}
+.vy-focus .vy-team-shell input,.vy-focus .vy-team-shell textarea,.vy-focus .vy-team-shell select{background:#0b373b;color:#effffb;border:1px solid #286a6b}
+.vy-focus .vy-team-shell aside.card{align-self:start}
+.vy-focus .vy-team-shell section>.card.vy-section-off{display:none!important}
+.vy-focus .vy-team-shell details[data-vy-tool]{display:none!important}
+.vy-focus .vy-team-shell details[data-vy-tool].vy-selected-tool{display:block!important}
+.vy-focus .vy-team-shell .vy-panel-title{margin:12px 0 18px}
+@media(max-width:750px){.vy-tool-picker{flex-direction:column;align-items:stretch}.vy-focus .main{padding:15px}.vy-focus .vy-navtabs{gap:5px}.vy-focus .vy-navtabs button{padding:9px 12px}}
+
+.vy-tool-picker[hidden]{display:none!important}

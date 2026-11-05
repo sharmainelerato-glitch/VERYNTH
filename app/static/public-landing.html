@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07121d">
+<title>VERYNTH — Intelligence, connected.</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,sans-serif;color:#effbfa;background:#07121d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse 65% 40% at 75% 10%,#115f6755,transparent),radial-gradient(ellipse 50% 35% at 10% 45%,#10445433,transparent),#07121d}
+a{color:inherit;text-decoration:none}
+nav{max-width:1240px;margin:auto;padding:25px 30px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:850;font-size:22px;letter-spacing:2px;display:flex;align-items:center;gap:12px}
+.brand span{color:#5de2d5;font-size:32px}
+.links{display:flex;align-items:center;gap:27px;font-size:13px;color:#aac5ca}
+.links a:hover{color:#65e6da}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 25px;border-radius:12px;background:linear-gradient(135deg,#27c5b6,#0a828e);color:#031b22;font-weight:800;box-shadow:0 9px 35px #1dc7b52a;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 45px #1dc7b54b}
+.btn.outline{background:#ffffff08;border:1px solid #42626b;color:#e4f7f5;box-shadow:none}
+.hero{max-width:1240px;margin:0 auto;padding:95px 30px 95px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:65px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#73e8d9;font-size:11px;font-weight:800;letter-spacing:2.3px;border:1px solid #23635e;background:#103f4140;border-radius:30px;padding:10px 15px}
+h1{font-size:clamp(48px,5.7vw,80px);line-height:1.07;letter-spacing:-3.5px;margin:28px 0}
+h1 em{font-style:normal;background:linear-gradient(100deg,#9df3e7,#2bc5c0);background-clip:text;-webkit-background-clip:text;color:transparent}
+.lead{font-size:17px;line-height:1.85;color:#a7bdc7;max-width:540px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:35px}
+.note{font-size:12px;color:#779aa5;margin-top:25px}
+.visual{position:relative;min-width:0}
+.visual:before{content:"";position:absolute;inset:12%;background:#13c9bd55;filter:blur(85px);border-radius:50%}
+.window{position:relative;background:linear-gradient(145deg,#142c3c,#0c1d2b);border:1px solid #34616b;border-radius:23px;box-shadow:0 35px 100px #0009,0 0 70px #2ed0c013;overflow:hidden;transform:perspective(1200px) rotateY(-5deg) rotateX(3deg)}
+.windowhead{padding:18px 21px;border-bottom:1px solid #284650;display:flex;align-items:center;justify-content:space-between}
+.dots{display:flex;gap:6px}.dots i{width:8px;height:8px;border-radius:50%;background:#42606d}
+.windowhead small{color:#89b6bb;letter-spacing:1.5px}
+.windowbody{padding:30px}
+.ai{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+.aiicon{width:49px;height:49px;border-radius:16px;background:linear-gradient(140deg,#1cbbb3,#0d677e);display:grid;place-items:center;font-size:28px}
+.ai strong{display:block;font-size:17px}.ai small{color:#8ab3ba}
+.prompt{border:1px solid #3a616a;border-radius:15px;background:#071925;padding:22px;color:#c4e2e3;line-height:1.7}
+.prompt b{color:#69e0d3}
+.insights{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.insight{background:#17313e;border:1px solid #284b55;border-radius:13px;padding:16px}
+.insight small{color:#83aab5}.insight strong{display:block;margin-top:9px;font-size:14px}
+.status{display:flex;align-items:center;gap:8px;color:#80d9c3;font-size:12px;margin-top:20px}
+.status:before{content:"";width:7px;height:7px;background:#45d6a3;border-radius:50%}
+.section{max-width:1200px;margin:auto;padding:40px 30px 110px}
+.sectionhead{text-align:center;margin-bottom:45px}
+.sectionhead h2{font-size:clamp(30px,4vw,46px);letter-spacing:-1.6px;margin:15px 0}
+.sectionhead p{color:#91adb8;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(145deg,#112936,#0b1d2a);border:1px solid #254451;border-radius:19px;padding:30px;min-height:195px}
+.card .symbol{font-size:29px;color:#61dfd3}
+.card h3{margin:20px 0 8px;font-size:18px}
+.card p{color:#91acb8;line-height:1.75;font-size:14px;margin:0}
+.cta{text-align:center;padding:80px 25px;background:linear-gradient(110deg,#0d333b,#0b1e2d);border-top:1px solid #244852;border-bottom:1px solid #244852}
+.cta h2{font-size:clamp(29px,4vw,45px);letter-spacing:-1.5px;margin:0 0 15px}
+.cta p{color:#a2c0c6;margin-bottom:28px}
+footer{max-width:1200px;margin:auto;padding:35px 30px;color:#789ba7;display:flex;justify-content:space-between;gap:15px;font-size:12px}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:60px;gap:45px}.window{transform:none}.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){nav{padding:18px}.links{gap:12px}.links a:not(.btn){display:none}.links .btn{padding:11px 14px}.hero{padding:45px 20px 70px}h1{letter-spacing:-2px}.grid{grid-template-columns:1fr}.insights{grid-template-columns:1fr}footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<nav>
+<a class="brand" href="/"><span>✦</span> VERYNTH</a>
+<div class="links">
+<a href="#capabilities">Capabilities</a>
+<a href="#about">About</a>
+<a class="btn" href="/welcome">Get Started →</a>
+</div>
+</nav>
+<main>
+<section class="hero">
+<div>
+<div class="eyebrow">✦ THE FUTURE OF CONNECTED INTELLIGENCE</div>
+<h1>Think beyond<br><em>the possible.</em></h1>
+<p class="lead">Meet VERYNTH. A connected intelligence environment where human curiosity meets AI-powered investigation, research, creation and collaboration.</p>
+<div class="actions">
+<a class="btn" href="/welcome">Get Started <span>↗</span></a>
+<a class="btn outline" href="#capabilities">Discover the platform ↓</a>
+</div>
+<p class="note">Explore the vision. Sign in to access your available workspace.</p>
+</div>
+<div class="visual">
+<div class="window">
+<div class="windowhead"><div class="dots"><i></i><i></i><i></i></div><small>✦ VERYNTH / NESS</small><small>PREVIEW</small></div>
+<div class="windowbody">
+<div class="ai"><div class="aiicon">✦</div><div><strong>Meet Ness</strong><small>Your AI intelligence partner</small></div></div>
+<div class="prompt"><b>Explore a question.</b><br>Bring together sources, examine evidence and discover meaningful connections.</div>
+<div class="insights">
+<div class="insight"><small>◈ INVESTIGATE</small><strong>Evidence & context</strong></div>
+<div class="insight"><small>✧ UNDERSTAND</small><strong>Connected insights</strong></div>
+<div class="insight"><small>⌘ CREATE</small><strong>Ideas & solutions</strong></div>
+<div class="insight"><small>♧ COLLABORATE</small><strong>People & intelligence</strong></div>
+</div>
+<div class="status">Illustrative product preview</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="capabilities">
+<div class="sectionhead"><div class="eyebrow">BUILT FOR CURIOSITY</div><h2>One platform. Many possibilities.</h2><p>Different kinds of work, connected through intelligence.</p></div>
+<div class="grid">
+<div class="card"><div class="symbol">✦</div><h3>Ness Intelligence</h3><p>Ask questions, investigate ideas and work with AI-assisted reasoning.</p></div>
+<div class="card"><div class="symbol">◈</div><h3>Evidence & Research</h3><p>Organize sources, compare information and examine supporting evidence.</p></div>
+<div class="card"><div class="symbol">⌘</div><h3>Engineering & Creation</h3><p>Explore technical problems, software changes and creative possibilities.</p></div>
+<div class="card"><div class="symbol">♧</div><h3>Connected Collaboration</h3><p>Bring human perspectives, shared work and intelligent assistance together.</p></div>
+<div class="card"><div class="symbol">◎</div><h3>Cross-Disciplinary Thinking</h3><p>Connect questions across science, finance, technology and research.</p></div>
+<div class="card"><div class="symbol">◇</div><h3>Human Oversight</h3><p>Review AI-generated conclusions, inspect evidence and stay in control.</p></div>
+</div>
+</section>
+<section class="cta" id="about"><h2>Your next discovery starts here.</h2><p>Enter a new way to investigate, understand and create.</p><a class="btn" href="/welcome">Get Started with VERYNTH →</a></section>
+</main>
+<footer><span>✦ VERYNTH · Intelligence, connected.</span><span>© 2026 VERYNTH</span></footer>
+</body>
+</html>

@@ -1,0 +1,699 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0a111e"><title>VERYNTH — Your workspace</title><link rel="icon" type="image/svg+xml" href="/static/verynth-mark.svg">
+<style>
+:root{color-scheme:dark;--bg:#0b101a;--side:#0c1421;--surface:#121c2b;--surface2:#182639;--line:#253349;--text:#ecf6fa;--muted:#91a2b8;--accent:#5ed8cd;--accent2:#138c9a;--danger:#ff9b9f;--shadow:0 20px 70px #02091265}*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);font-size:14px}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}input,textarea,select{background:#101c2b;border:1px solid #33455a;color:var(--text);border-radius:12px;padding:12px 14px;min-width:0}textarea{resize:vertical}a{color:var(--accent)}.app{display:grid;grid-template-columns:252px minmax(0,1fr);min-height:100vh}.sidebar{background:linear-gradient(170deg,#0c1524,#101d2a);border-right:1px solid #203149;padding:28px 17px;display:flex;flex-direction:column;gap:24px;min-height:100vh;position:sticky;top:0;height:100vh}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:3px;font-size:15px;padding:3px 8px}.brandmark{display:grid;place-items:center;background:linear-gradient(140deg,#174455,#18a2a8);color:#aafbf2;border:1px solid #3aa5ad;border-radius:13px;font-size:29px;width:43px;height:43px;box-shadow:0 0 28px #26d4d529}.nav{display:flex;flex-direction:column;gap:6px}.nav button{display:flex;gap:13px;align-items:center;width:100%;color:#aabed1;background:transparent;border:1px solid transparent;padding:13px 15px;border-radius:12px;text-align:left}.nav button:hover{background:#182638;color:#fff}.nav button.active{background:#1b3342;border-color:#305263;color:#91f5e9}.nav .symbol{font-size:18px;width:21px;text-align:center}.navsubtitle{font-size:10px;letter-spacing:2px;color:#7795a7;margin:14px 13px 6px;text-transform:uppercase;font-weight:700}.sidebarFooter{margin-top:auto;border-top:1px solid var(--line);padding:16px 11px;color:var(--muted);line-height:1.6;font-size:12px}.sidebarFooter strong{color:#fff;display:block}.main{min-width:0;position:relative;min-height:100vh;background:radial-gradient(ellipse 55% 40% at 100% -10%,#103b4938,transparent),var(--bg)}.topbar{height:76px;padding:0 46px;display:flex;align-items:center;gap:17px;border-bottom:1px solid #1d2939}.crumb{color:var(--muted);font-size:13px}.topTitle{font-size:15px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.topActions{margin-left:auto;display:flex;align-items:center;gap:10px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#192a3c;border:1px solid #344b5e;border-radius:11px;color:#d9eff5;padding:10px 14px;font-weight:600;white-space:nowrap}.btn:hover{background:#23394c}.btn.primary{background:linear-gradient(115deg,#199a9e,#087d91);border-color:#36b6b5;color:white}.btn.plain{background:transparent;border-color:transparent;color:#bacbd8}.btn.icon{padding:10px 12px}.btn.small{padding:7px 10px;font-size:12px}.btn.alert{border-color:#6c3743;color:#ffb6b8}.content{max-width:1160px;margin:0 auto;padding:38px 46px 110px}.eyebrow{color:#6fe5d9;text-transform:uppercase;letter-spacing:2.3px;font-size:10px;font-weight:800}.heading{font-size:clamp(26px,3.4vw,40px);letter-spacing:-1.2px;margin:10px 0 8px;font-weight:700}.sub{color:var(--muted);line-height:1.65;font-size:14px;margin:0}.sectionHeading{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:40px 0 16px}.sectionHeading h2{font-size:16px;margin:0;font-weight:680}.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.tile{border:1px solid #2a4054;background:linear-gradient(145deg,#162838,#111e2d);border-radius:18px;padding:23px;min-height:150px;text-align:left;display:flex;flex-direction:column;justify-content:space-between;color:inherit;transition:transform .18s,border-color .18s}.tile:hover{border-color:#429b9b;transform:translateY(-2px)}.tile .glyph{font-size:25px;color:var(--accent)}.tile strong{font-size:16px}.tile span{font-size:12px;color:var(--muted)}.projectGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.projectCard{width:100%;text-align:left;color:inherit;border:1px solid #2c3f55;background:#131e2c;border-radius:15px;padding:19px 22px;display:flex;align-items:center;gap:16px}.projectCard:hover{background:#1a293a;border-color:#4b999a}.projectCard strong{display:block;font-size:14px;margin-bottom:5px}.projectCard small{color:var(--muted)}.projectIcon{width:43px;height:43px;display:grid;place-items:center;border-radius:12px;background:#16444c;color:#8cfff2;font-size:20px}.empty{color:#91a4b6;border:1px dashed #33495b;padding:30px;border-radius:15px;text-align:center;line-height:1.8}.workShell{max-width:920px;margin:auto}.workHeader{display:flex;justify-content:space-between;align-items:start;gap:14px}.tabs{display:flex;gap:4px;border-bottom:1px solid #29384b;margin:25px 0;overflow-x:auto}.tabs button{background:transparent;color:#91a7b8;padding:14px 18px;border:0;border-bottom:2px solid transparent;white-space:nowrap}.tabs button.active{color:#8ef2e6;border-bottom-color:#64dacf;font-weight:700}.conversation{min-height:clamp(260px,43vh,560px);max-height:54vh;overflow:auto;display:flex;flex-direction:column;gap:16px;padding:12px 5px 28px}.bubble{max-width:min(84%,720px);align-self:flex-start;border:1px solid #273e52;border-radius:17px 17px 17px 5px;padding:15px 18px;background:#172538;line-height:1.65;overflow-wrap:anywhere}.bubble.me{align-self:flex-end;background:#14545a;border-color:#258b88;border-radius:17px 17px 5px 17px}.bubbleHead{font-size:11px;letter-spacing:.3px;color:#87e9d9;margin-bottom:7px;font-weight:700}.bubble.me .bubbleHead{color:#cefffa}.bubbleBody{white-space:pre-wrap}.bubbleTime{color:#8295ab;font-size:10px;margin-top:9px}.composer{background:linear-gradient(145deg,#182c3e,#121f2e);border:1px solid #365267;border-radius:20px;padding:13px;box-shadow:var(--shadow)}.composeTop{display:flex;gap:10px;align-items:center}.composeTop textarea{flex:1;border:0;background:transparent;min-height:58px;max-height:180px;padding:13px 10px;color:#fff;outline:none;resize:vertical}.composeTop textarea:focus{outline:none}.composeBottom{display:flex;align-items:center;gap:8px;padding:8px 3px 1px;flex-wrap:wrap}.spacer{flex:1}.recording{background:#4d2737!important;border-color:#ab4b69!important;color:#ffc5ce!important;animation:pulse 1.2s infinite}@keyframes pulse{50%{opacity:.72}}.chipRow{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}.chip{display:inline-flex;align-items:center;gap:7px;border-radius:999px;border:1px solid #3a6171;background:#193243;font-size:11px;padding:7px 10px;color:#c5e1e8}.chip button{padding:0 2px;background:none;border:0;color:#ffa2a5}.attach{display:flex;gap:9px;align-items:center;padding:10px 12px;margin-top:10px;border:1px solid #3a566c;border-radius:11px;max-width:100%;font-size:12px}.attach a{color:#81ebdb;overflow-wrap:anywhere}.attach img{max-width:220px;max-height:160px;border-radius:9px}.attach video,.attach audio{max-width:100%;width:280px;margin-top:9px}.card{border:1px solid #2c4154;background:#121f2d;border-radius:17px;padding:21px}.stack{display:grid;gap:13px}.listRow{display:flex;align-items:center;gap:16px;padding:15px 0;border-bottom:1px solid #263749}.listRow:last-child{border-bottom:0}.listRow>div:nth-child(2){flex:1;min-width:0}.listRow strong{display:block;overflow-wrap:anywhere;margin-bottom:5px}.listRow small{color:var(--muted)}.initial{width:37px;height:37px;border-radius:50%;display:grid;place-items:center;background:#1e4a58;color:#c8ffef;font-weight:800}.search{width:100%;margin:10px 0 15px}.miniFilters{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.miniFilters button.active{border-color:#45b9b1;background:#17444c;color:#aefff1}.pill{border:1px solid #3c5267;border-radius:999px;padding:5px 9px;font-size:11px;color:#b4c8d5}.status{min-height:24px;color:#b8d7de;font-size:12px;margin:10px 0}.status.error{color:#ffb7bd}.modalBack{position:fixed;inset:0;background:#020912ad;display:grid;place-items:center;z-index:30;padding:18px}.modal{border:1px solid #365465;background:#111e2d;box-shadow:0 25px 100px #000a;max-width:520px;width:100%;border-radius:22px;padding:27px}.modal h2{margin:0 0 10px}.field{display:grid;gap:9px;margin:16px 0}.field label{font-size:12px;color:#adc3cf}.field input,.field select{width:100%}.split{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:20px}.sidePanel{height:fit-content}.inviteCode{background:#0d1826;padding:14px;word-break:break-all;border-radius:10px;border:1px solid #37576a;color:#a3f9eb;font-size:12px}.floatBtn{position:fixed;bottom:26px;right:28px;width:60px;height:60px;border-radius:19px;background:linear-gradient(135deg,#1ed2bd,#086e8a);border:1px solid #8deadd;color:#fff;font-size:28px;box-shadow:0 15px 55px #05b5b048;z-index:15}.floatPanel{position:fixed;right:24px;bottom:97px;width:min(400px,calc(100vw - 32px));max-height:78vh;background:#101e2d;border:1px solid #426070;border-radius:20px;padding:18px;box-shadow:0 25px 90px #000a;z-index:15;display:flex;flex-direction:column}.floatHistory{max-height:35vh;min-height:80px;overflow:auto;display:grid;gap:10px;margin:12px 0}.floatHistory .bubble{max-width:96%;padding:11px 13px;font-size:12px}.floatPanel textarea{width:100%;min-height:60px}.authNotice{margin:20px 0;padding:18px;border:1px solid #5a5242;border-radius:15px;background:#3a302227;color:#ebd2a0}.hidden{display:none!important}.mobileBrand{display:none}.iconText{color:#7de2d6}.muted{color:var(--muted)}.fine{font-size:11px;color:var(--muted);line-height:1.6}.right{text-align:right}audio{color-scheme:dark}::selection{background:#227c80;color:#fff}@media(max-width:950px){.tiles{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.content{padding:30px 26px 100px}.topbar{padding:0 26px}.app{grid-template-columns:210px 1fr}}@media(max-width:680px){.app{display:block;padding-bottom:64px}.sidebar{position:fixed;top:auto;bottom:0;width:100%;height:63px;min-height:0;z-index:22;border-right:0;border-top:1px solid #315065;padding:5px 8px;background:#101a28}.brand,.sidebarFooter,.navsubtitle,.sidebar .newButton{display:none}.nav{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}.nav button{justify-content:center;display:grid;gap:1px;font-size:10px;padding:5px 2px;text-align:center}.nav .symbol{margin:auto;font-size:17px}.topbar{height:63px;padding:0 16px}.content{padding:23px 17px 90px}.heading{font-size:28px}.tiles,.projectGrid{grid-template-columns:1fr}.topActions .hideMobile{display:none}.bubble{max-width:93%}.floatBtn{right:18px;bottom:82px;width:53px;height:53px}.floatPanel{bottom:144px;right:10px}.composer{padding:9px}.tabs button{padding:12px 10px}}
+
+/* Bulk polish: compact in-workspace specialist launcher */
+.toolGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px;margin-top:16px}.toolCard{display:flex;flex-direction:column;align-items:flex-start;gap:10px;text-align:left;min-height:154px;padding:20px;border-radius:18px;background:linear-gradient(145deg,#162b3b,#101e2e);border:1px solid #2b4b5c;color:var(--text);transition:transform .15s,border-color .15s}.toolCard:hover{transform:translateY(-2px);border-color:#64dacf}.toolCard strong{font-size:15px}.toolCard small{color:var(--muted);line-height:1.5}.toolCard .toolGlyph{color:#7ce5d7;font-size:24px}.toolFrame{width:100%;height:min(76vh,850px);border:1px solid #35556a;border-radius:16px;background:#0b101a}.voiceClock{font-variant-numeric:tabular-nums;font-size:30px;font-weight:700;letter-spacing:1px;color:#a8fff1;margin:18px 0 6px}.toolInfo{margin-top:15px;color:var(--muted);font-size:12px;line-height:1.6}
+
+/* Original Advanced Tools functionality restored inside the approved workspace styling. */
+.specialistDashboard{display:grid;gap:15px;margin-top:18px}.specialistMetrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:11px}.specialistMetric{border:1px solid var(--line);border-radius:13px;background:var(--surface2);padding:15px}.specialistMetric strong{display:block;font-size:25px;color:var(--accent);font-variant-numeric:tabular-nums}.specialistMetric small{color:var(--muted)}.specialistPlot{border:1px solid var(--line);border-radius:15px;padding:17px;background:var(--surface)}.specialistPlot svg{display:block;width:100%;height:auto;max-height:220px}.specialistRecord{padding:15px;border:1px solid var(--line);border-radius:13px;background:var(--surface);margin:9px 0;overflow-wrap:anywhere}.specialistRecord summary{cursor:pointer;font-weight:650;color:var(--text)}.specialistRecord p{white-space:pre-wrap;line-height:1.6;color:var(--muted)}.specialistRecord pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:350px;overflow:auto;color:var(--muted);font-size:12px}.specialistControls{display:flex;flex-wrap:wrap;gap:9px;align-items:center}.specialistForm{display:grid;gap:10px;border:1px solid var(--line);border-radius:15px;padding:17px;background:var(--surface)}.specialistForm textarea{min-height:90px}.specialistSection{margin-top:16px}.specialistSection h3{font-size:15px}.specialistMuted{color:var(--muted);font-size:12px}
+</style></head>
+<body><div class="app"><aside class="sidebar"><div class="brand"><span class="brandmark">✧</span> VERYNTH</div><button class="btn primary newButton" id="newBtn">＋ New project</button><nav class="nav" id="nav"><button data-nav="home"><span class="symbol">⌂</span>Home</button><button data-nav="projects"><span class="symbol">◫</span>Projects</button><button data-nav="collaborate"><span class="symbol">♧</span>Collaborate</button><button data-nav="library"><span class="symbol">▤</span>Library</button><button data-nav="advanced"><span class="symbol">⚙</span>Advanced tools</button></nav><div class="sidebarFooter"><button data-nav="account" class="btn small" style="width:100%;justify-content:flex-start">◉ Account & settings</button><p style="font-size:11px">✦ Ness Intelligence · Evidence-first work</p></div></aside><main class="main"><header class="topbar"><button class="btn plain icon hidden" id="backBtn" title="Go back">← Back</button><span class="crumb" id="crumb">Workspace</span><span class="topTitle" id="topTitle"></span><div class="topActions"><button class="btn small hideMobile" id="topCreate">＋ New</button><button class="btn small" id="notificationBell" type="button" title="VERYNTH notifications" aria-label="Open notifications">♧ Notifications <span id="notificationCount"></span></button><span class="pill" id="rolePill">Private</span></div></header><section class="content" id="content"></section></main></div><button class="floatBtn" id="floatBtn" aria-label="Open Ness">✦</button><aside class="floatPanel hidden" id="floatPanel"><div style="display:flex;justify-content:space-between;align-items:center"><strong>✦ Ness</strong><button class="btn plain icon" id="floatClose" aria-label="Close Ness">✕</button></div><p class="fine" id="floatHint">Ask Ness about your selected project.</p><div id="floatHistory" class="floatHistory"></div><div id="floatAttachments" class="chipRow"></div><textarea id="floatInput" placeholder="Ask Ness something..."></textarea><div class="composeBottom"><button class="btn icon small" id="floatUpload" title="Attach media">＋ Attach</button><button class="btn icon small" id="floatVoice" title="Record a voice note">◉ Voice</button><span class="spacer"></span><button class="btn primary small" id="floatSend">Send ↑</button></div><p class="fine" id="floatStatus"></p></aside><div id="modalRoot"></div><input type="file" id="filePicker" multiple hidden accept="*/*"><input type="file" id="floatPicker" multiple hidden accept="*/*"><script>
+'use strict';
+const $=s=>document.querySelector(s), el=(tag,classes,text)=>{const x=document.createElement(tag);if(classes)x.className=classes;if(text!==undefined)x.textContent=text;return x}, safeText=s=>String(s||'');
+const state={teamMode:location.pathname.startsWith('/team'),view:'home',history:[],projects:[],workspaces:[],currentProject:null,currentWorkspace:null,me:null,projectTab:'conversation',teamTab:'chat',libraryFilter:'all',librarySearch:'',library:[],pending:[],floatPending:[],recordTarget:null,recorder:null,stream:null,recordChunks:[],activeRecording:false};
+const api=async(path,opts={})=>{const r=await fetch(path,{credentials:'same-origin',...opts});const data=await r.json().catch(()=>({}));if(!r.ok)throw Error(typeof data.detail==='string'?data.detail:`Request failed (${r.status})`);return data};
+const json=(path,body)=>api(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+const tpath=(suffix='')=>'/api/team/workspaces/'+encodeURIComponent(state.currentWorkspace?.id||'')+suffix;
+const fileSize=n=>n==null?'':n<1024?n+' B':n<1048576?(n/1024).toFixed(1)+' KB':(n/1048576).toFixed(1)+' MB';
+const formatDate=x=>x?new Date(x).toLocaleString(undefined,{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}):'';
+const notify=(message,err=false)=>{const x=$('#localStatus');if(x){x.textContent=message;x.classList.toggle('error',err)}else $('#floatStatus').textContent=message};
+async function openNotifications(){
+ showModal('VERYNTH notifications',async(box)=>{
+  const status=el('p','fine','Loading your notifications…');box.append(status);box.append(btn('Mark all as read',async()=>{try{await api('/api/team/notifications/read-all',{method:'POST'});refreshNotificationCount();openNotifications()}catch(e){status.textContent=e.message}},'btn small'));
+  try{const data=await api('/api/team/notifications');status.textContent=data.items.length?'Your recent account and collaboration updates':'No notifications yet.';
+   for(const item of data.items){const row=el('div','card stack');row.append(el('strong',null,item.title),el('p','sub',item.body),el('small','fine',formatDate(item.created_at)));
+    if(!item.read_at)row.append(btn('Mark as read',async()=>{await api('/api/team/notifications/'+encodeURIComponent(item.id)+'/read',{method:'POST'});row.querySelector('button')?.remove();refreshNotificationCount()},'btn small'));
+    box.append(row)}
+  }catch(e){status.textContent='Notifications unavailable: '+e.message}
+ });
+}
+async function refreshNotificationCount(){try{const data=await api('/api/team/notifications');const count=$('#notificationCount');if(count)count.textContent=data.unread?'('+data.unread+')':''}catch(e){}}
+function btn(text,action,cls='btn'){const b=el('button',cls,text);b.type='button';b.onclick=action;return b}
+function node(parent,...children){children.forEach(c=>c&&parent.append(c));return parent}
+function showModal(title,build){const root=$('#modalRoot');root.replaceChildren();const shade=el('div','modalBack'),box=el('section','modal');const head=el('div','workHeader'),h=el('h2',null,title);node(head,h,btn('✕',()=>root.replaceChildren(),'btn plain icon'));box.append(head);build(box,()=>root.replaceChildren());shade.append(box);shade.onclick=e=>{if(e.target===shade)root.replaceChildren()};root.append(shade)}
+function field(parent,title,type='text',value=''){const wrap=el('div','field'),lab=el('label',null,title),input=el('input');input.type=type;input.value=value;wrap.append(lab,input);parent.append(wrap);return input}
+function chooseView(view,detail=null,remember=true){if(remember)state.history.push({view:state.view,project:state.currentProject,workspace:state.currentWorkspace});state.view=view;if(view==='project'&&detail)state.currentProject=detail;if(view==='team'&&detail)state.currentWorkspace=detail;render()}
+function back(){const prev=state.history.pop();if(prev){state.view=prev.view;state.currentProject=prev.project;state.currentWorkspace=prev.workspace;render()}else chooseView('home',null,false)}
+function header(title,crumb){$('#topTitle').textContent=title||'';$('#crumb').textContent=crumb||'Workspace';$('#backBtn').classList.toggle('hidden',state.view==='home');$('#backBtn').onclick=back;$('#rolePill').textContent=state.teamMode?'Team member':'Private owner';document.querySelectorAll('[data-nav]').forEach(b=>b.classList.toggle('active',b.dataset.nav===state.view||(b.dataset.nav==='projects'&&state.view==='project')||(b.dataset.nav==='collaborate'&&state.view==='team')))}
+function shell(title,sub,eyebrow='VERYNTH WORKSPACE'){const frag=document.createDocumentFragment();frag.append(el('div','eyebrow',eyebrow),el('h1','heading',title),el('p','sub',sub));return frag}
+function section(title,action){const x=el('div','sectionHeading');x.append(el('h2',null,title));if(action)x.append(action);return x}
+function projectCard(p,team=false){const b=el('button','projectCard');const ico=el('span','projectIcon','◈'),txt=el('div');txt.append(el('strong',null,p.name||'Untitled'),el('small',null,team?'Shared workspace':'Saved project'));b.append(ico,txt);b.onclick=()=>team?chooseView('team',p):chooseView('project',p);return b}
+function render(){refreshNotificationCount();const root=$('#content');root.replaceChildren();if(state.view==='home')home(root);else if(state.view==='projects')projectsPage(root);else if(state.view==='project')projectPage(root);else if(state.view==='collaborate')collabPage(root);else if(state.view==='team')teamPage(root);else if(state.view==='library')libraryPage(root);else if(state.view==='advanced')advancedPage(root);else if(state.view==='account')accountPage(root);else home(root)}
+async function refresh(){try{if(!state.teamMode)state.projects=await api('/api/projects');state.workspaces=await api('/api/team/workspaces');state.me=await api('/api/team/me')}catch(e){if(state.teamMode){try{state.workspaces=await api('/api/team/workspaces')}catch(err){$('#content').replaceChildren(el('div','authNotice','Team sign-in required. Please sign in at /team/login.'));return}}}render()}
+const specialistTools=[
+ ['Investigation','◈','Inspect evidence and trace sources'],
+ ['Ness Verify','✓','Review claims and supporting records'],
+ ['Reality Twin','◎','Explore bounded scenario models'],
+ ['Engineering review','⌘','Inspect code and proposed changes'],
+ ['Meta Model Lab','◇','Compare model outputs and evidence'],
+ ['Afterlight','◷','Review monitoring and changes'],
+ ['AI Council','✧','Compare different analytical perspectives']
+];
+// Read-only native adapters to existing, authenticated owner project APIs.
+// No generated or placeholder findings are shown as real analysis.
+const nativeToolAdapters={
+ 'Investigation':{teamKey:'investigation',label:'Saved intelligence cases',endpoint:'/intelligence/cases',note:'Existing cases only; opening this view does not start a new investigation.'},
+ 'Ness Verify':{teamKey:'reliability',label:'Evidence and reliability overview',endpoint:'/reliability/overview',note:'Displays existing reliability evidence. This is not a new claim-verification run.'},
+ 'Reality Twin':{teamKey:'reality-twin',label:'Existing scenario models',endpoint:'/reality-twin',note:'Saved scenarios only. No simulation is run by this view.'},
+ 'Engineering review':{teamKey:'engineering',label:'Engineering verification plan',endpoint:'/engineering/verification-plan',note:'A read-only verification plan, not a code execution or patch approval.'},
+ 'Afterlight':{label:'Saved monitoring notices',endpoint:'/afterlight/notices',note:'Existing notices; no background monitoring is started.'},
+ 'Meta Model Lab':{label:'Saved model output inventory',endpoint:'/model-lab/saved',note:'Lists saved assistant responses and council reports. No live model comparison or benchmark is run.'},
+ 'AI Council':{teamKey:'ai-council',label:'Existing council reports',endpoint:'/ai-council/reports',note:'Previously generated reports; no new model calls are made.'}
+};
+// Restored specialist dashboards: structured, real records and bounded SVG charts.
+const specialistViews={
+ 'Investigation':[['Cases','/intelligence/cases'],['Saved evidence','/files']],
+ 'Ness Verify':[['Reliability','/reliability/overview'],['Media coverage','/reliability/media-coverage']],
+ 'Reality Twin':[['Scenarios','/reality-twin'],['Validation plans','/reality-twin/validation-plans'],['Scenario versions','/reality-twin/scenario-versions']],
+ 'Engineering review':[['Verification plan','/engineering/verification-plan'],['Suggestions','/engineering/suggestions'],['Follow-ups','/engineering/followups']],
+ 'Afterlight':[['Notices','/afterlight/notices'],['Jobs','/afterlight/jobs'],['Schedules','/afterlight/schedules']],
+ 'AI Council':[['Council reports','/ai-council/reports']],
+ 'Meta Model Lab':[['Saved outputs','/model-lab/saved']]
+};
+function specialistItems(data){
+ if(Array.isArray(data))return data;
+ if(data&&typeof data==='object'){
+  for(const key of ['items','reports','cases','scenarios','plans','jobs','notices','results','records','suggestions','followups','files'])if(Array.isArray(data[key]))return data[key];
+ }
+ return data==null?[]:[data];
+}
+function specialistPreview(value){
+ if(value===null||value===undefined)return 'Not provided';
+ if(typeof value==='string'){
+  if(value.length>300)return value.slice(0,300)+'…';
+  return value;
+ }
+ return JSON.stringify(value);
+}
+function specialistChart(container,series){
+ // Values are counts of retrieved records, not model-generated measurements.
+ if(!series.length)return;
+ const block=el('div','specialistPlot'),heading=el('strong',null,'Saved records by category');block.append(heading,el('p','specialistMuted','Counts from the selected project. Not a simulation or predictive chart.'));
+ const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 620 '+(Math.max(130,series.length*43+30)));svg.setAttribute('role','img');svg.setAttribute('aria-label','Bar chart of retrieved saved records by category');
+ const make=(tag,attrs,text)=>{const n=document.createElementNS('http://www.w3.org/2000/svg',tag);Object.entries(attrs).forEach(([k,v])=>n.setAttribute(k,String(v)));if(text!==undefined)n.textContent=text;svg.append(n)};
+ const max=Math.max(1,...series.map(x=>x.count));series.forEach((x,i)=>{const y=16+i*43;make('text',{x:5,y:y+17,fill:'#b9d5df','font-size':12},x.name.slice(0,23));make('rect',{x:190,y,width:Math.max(1,350*x.count/max),height:22,rx:5,fill:'#39b9b3'});make('text',{x:550,y:y+17,fill:'#e8f8f8','font-size':13},x.count)});block.append(svg);container.append(block);
+}
+function specialistRenderSection(container,label,data){
+ const items=specialistItems(data),wrap=el('section','specialistSection'),title=el('h3',null,label+' · '+items.length);wrap.append(title);
+ if(!items.length){wrap.append(el('p','specialistMuted','No saved records.'));container.append(wrap);return 0}
+ for(const item of items.slice(0,25)){
+  const details=el('details','specialistRecord'),head=el('summary',null,(item&&typeof item==='object'&&(item.title||item.name||item.question||item.kind||item.status||item.state||item.id))||label);
+  details.append(head);
+  if(item&&typeof item==='object'){
+   for(const [k,v] of Object.entries(item).slice(0,25)){
+    if(v===null||v===undefined||k==='id'||k==='project_id')continue;
+    const p=el('p');const key=el('strong',null,k.replaceAll('_',' ')+' · ');p.append(key,document.createTextNode(specialistPreview(v)));details.append(p);
+   }
+  }else details.append(el('p',null,String(item)));
+  wrap.append(details);
+ }
+ if(items.length>25)wrap.append(el('p','specialistMuted','Showing 25 of '+items.length+' saved records.'));
+ container.append(wrap);return items.length;
+}
+
+// Reality Twin interactive restoration: uses existing owner-scoped deterministic backend.
+// Charts represent saved numerical model outputs, never independent physical measurements.
+const twinModels={
+ robot_braking_uncertainty:{label:'Robot braking uncertainty',fields:[['speed_m_s','Speed (m/s)',4],['response_min_s','Minimum response delay (s)',.1],['response_max_s','Maximum response delay (s)',.4],['deceleration_min_m_s2','Minimum deceleration (m/s²)',2],['deceleration_max_m_s2','Maximum deceleration (m/s²)',4],['available_distance_m','Available distance (m)',15],['required_reserve_m','Required reserve (m)',2]]},
+ battery_uncertainty:{label:'Battery runtime bounds',fields:[['capacity_wh','Capacity (Wh)',500],['power_min_w','Minimum power (W)',50],['power_max_w','Maximum power (W)',100],['efficiency_min','Minimum efficiency (0–1)',.75],['efficiency_max','Maximum efficiency (0–1)',.95]]},
+ service_capacity:{label:'Service capacity',fields:[['arrival_requests_s','Arrivals per second',20],['service_time_ms','Service time (ms)',100],['workers','Workers',4],['horizon_s','Horizon (s)',300],['initial_backlog','Initial backlog',0],['backlog_limit','Backlog limit',100]]}
+};
+function twinOutputPlot(host,record){
+ const outputs=record&&record.outputs||{},a=outputs.baseline||{},b=outputs.proposed||{};
+ const metrics=Object.keys(a).filter(k=>typeof a[k]==='number'&&Number.isFinite(a[k])&&typeof b[k]==='number'&&Number.isFinite(b[k]));
+ if(!metrics.length)return;
+ const panel=el('div','specialistPlot');panel.append(el('strong',null,'Baseline versus proposed · modeled results'),el('p','specialistMuted','Calculated estimates from saved user-supplied assumptions. Not measured outcomes or safety certification.'));
+ const chooser=el('select');chooser.setAttribute('aria-label','Choose modeled metric');metrics.forEach(k=>{const o=el('option',null,k.replaceAll('_',' '));o.value=k;chooser.append(o)});panel.append(chooser);
+ const plot=el('div');panel.append(plot);const draw=()=>{
+  plot.replaceChildren();const k=chooser.value,values=[a[k],b[k]],min=Math.min(0,...values),max=Math.max(0,...values),span=Math.max(1e-9,max-min),svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 620 150');svg.setAttribute('role','img');svg.setAttribute('aria-label','Modeled '+k+' baseline '+values[0]+' proposed '+values[1]);
+  const put=(tag,attrs,txt)=>{const n=document.createElementNS('http://www.w3.org/2000/svg',tag);Object.entries(attrs).forEach(([x,y])=>n.setAttribute(x,String(y)));if(txt!==undefined)n.textContent=txt;svg.append(n)};
+  const x0=160+380*(0-min)/span;put('line',{x1:x0,x2:x0,y1:5,y2:142,stroke:'#8eaab4','stroke-width':1});
+  values.forEach((v,i)=>{const y=18+i*63,x=160+380*(v-min)/span;put('text',{x:5,y:y+20,fill:'#d5e9ed','font-size':14},i?'Proposed':'Baseline');put('rect',{x:Math.min(x,x0),y,width:Math.max(2,Math.abs(x-x0)),height:24,rx:4,fill:i?'#5dc4c2':'#7e9eaf'});put('text',{x:550,y:y+19,fill:'#f0fafb','font-size':12},String(Number(v.toPrecision(6))))});plot.append(svg);
+  const delta=b[k]-a[k];plot.append(el('p','specialistMuted','Difference (proposed − baseline): '+Number(delta.toPrecision(6))+' · Units follow the selected metric. A positive change is not necessarily an improvement.'));
+ };chooser.onchange=draw;draw();host.append(panel);
+ if(outputs.model_limitations)host.append(el('p','specialistMuted',outputs.model_limitations));
+}
+function twinInteractiveWorkspace(host,pid,reload){
+ const base='/api/projects/'+encodeURIComponent(pid),section=el('section','specialistSection'),heading=el('h3',null,'Interactive Reality Twin comparisons');section.append(heading,el('p','specialistMuted','Create bounded, deterministic scenario comparisons using the existing Reality Twin API. Inputs are hypothetical unless independently verified.'));
+ const model=el('select');model.setAttribute('aria-label','Model type');Object.entries(twinModels).forEach(([k,v])=>{const o=el('option',null,v.label);o.value=k;model.append(o)});section.append(model);
+ const title=el('input');title.placeholder='Comparison title (5–120 characters)';title.value='Reality Twin comparison';section.append(title);
+ const grid=el('div');grid.style.display='grid';grid.style.gridTemplateColumns='repeat(auto-fit,minmax(220px,1fr))';grid.style.gap='12px';section.append(grid);
+ const assumptions=el('textarea');assumptions.placeholder='Describe assumptions, evidence provenance and which values are hypothetical (12–4000 characters)';section.append(assumptions);
+ const msg=el('p','status');const build=()=>{grid.replaceChildren();const cfg=twinModels[model.value];const groups={};for(const side of ['baseline','proposed']){const group=el('div','specialistForm');group.append(el('strong',null,side==='baseline'?'Baseline':'Proposed'));groups[side]={};for(const [key,label,initial] of cfg.fields){const lbl=el('label',null,label),input=el('input');input.type='number';input.step='any';input.value=String(initial);input.setAttribute('aria-label',side+' '+label);lbl.append(input);group.append(lbl);groups[side][key]=input}grid.append(group)}section._twinFields=groups};model.onchange=build;build();
+ section.append(btn('Calculate and save comparison',async()=>{
+  const payload={title:title.value,model:model.value,assumptions:assumptions.value,source_ids:[],baseline:{},proposed:{}};
+  for(const side of ['baseline','proposed'])for(const [key,input] of Object.entries(section._twinFields[side])){if(input.value.trim()===''){msg.textContent='Enter every '+side+' value.';msg.classList.add('error');return}payload[side][key]=Number(input.value)}
+  msg.textContent='Calculating through the existing backend…';msg.classList.remove('error');try{const result=await json(base+'/reality-twin',payload);msg.textContent='Comparison saved. View the actual calculated results below.';const preview=el('div');preview.append(el('h3',null,'New comparison · '+result.inputs.title));twinOutputPlot(preview,result);section.querySelector('.twinNewResult')?.remove();preview.className='twinNewResult';section.append(preview);await reload()}catch(e){msg.textContent=e.message;msg.classList.add('error')}
+ },'btn primary small'),msg);
+ const history=el('div');section.append(el('h3',null,'Saved scenario comparison charts'),history);
+ const showHistory=async()=>{history.replaceChildren();try{const records=await api(base+'/reality-twin');if(!records.length){history.append(el('p','specialistMuted','No saved comparisons yet.'));return}for(const r of records.slice(0,12)){const details=el('details','specialistRecord'),label=r.inputs?.title||'Saved scenario';details.append(el('summary',null,label+' · '+(r.inputs?.model||'')));const content=el('div');twinOutputPlot(content,r);content.append(btn('Create evidence-to-model review',async()=>{const feedback=el('p','status','Running deterministic evidence review…');content.append(feedback);try{const result=await json(base+'/reality-twin/'+encodeURIComponent(r.id)+'/evidence-review',{});feedback.textContent='Evidence review saved ('+result.id+').';const review=el('details','specialistRecord');review.append(el('summary',null,'Review findings'));for(const [k,v] of Object.entries(result.report||{}))review.append(el('p',null,k.replaceAll('_',' ')+': '+specialistPreview(v)));content.append(review)}catch(e){feedback.textContent=e.message;feedback.classList.add('error')}},'btn small'));details.append(content);history.append(details)}}catch(e){history.append(el('p','status error','Could not load scenario history: '+e.message))}};
+ section.append(btn('Refresh scenario charts',showHistory,'btn small'));showHistory();host.append(section);
+}
+
+// Investigation and Ness Verify restoration. Existing owner-scoped endpoints only.
+function evidenceText(host,value){const p=el('p','specialistMuted',String(value??''));p.style.whiteSpace='pre-wrap';p.style.overflowWrap='anywhere';host.append(p);return p}
+function specialistStatus(host){const p=el('p','status');host.append(p);return p}
+function specialistInput(host,label,placeholder='',kind='input'){
+ const wrap=el('label',null,label),input=el(kind);input.placeholder=placeholder;input.style.display='block';input.style.width='100%';wrap.append(input);host.append(wrap);return input;
+}
+function evidenceTimeline(host,data){
+ const events=[];(data.uploads||[]).forEach(x=>events.push({date:x.created_at,title:'Uploaded · '+x.filename,detail:x.extract_status||'Extraction state unknown',kind:'upload'}));
+ (data.video_observations||[]).forEach(x=>events.push({date:x.created_at,title:'Sampled frame · '+x.filename,detail:'Offset '+x.seconds+' seconds · '+(x.description||''),kind:'frame'}));
+ events.sort((a,b)=>String(a.date||'').localeCompare(String(b.date||'')));
+ const wrap=el('section','specialistSection');wrap.append(el('h3',null,'Evidence activity timeline · '+events.length),el('p','specialistMuted','Upload dates are system timestamps. Video offsets are relative to each file, not real-world event times.'));
+ const list=el('div');list.style.cssText='border-left:2px solid #3a999c;margin:12px 0 12px 8px;padding-left:18px';
+ for(const e of events.slice(-70)){const item=el('div','specialistRecord');item.style.marginBottom='10px';item.append(el('strong',null,e.title),el('small',null,' · '+(e.date||'Unknown date')));evidenceText(item,e.detail);list.append(item)}
+ if(!events.length)list.append(el('p','specialistMuted','No upload or sampled-frame events yet.'));wrap.append(list);host.append(wrap)
+}
+function investigationWorkspace(host,pid){
+ const base='/api/projects/'+encodeURIComponent(pid),wrap=el('section','specialistSection');wrap.append(el('h3',null,'Investigation · evidence relationships'),el('p','specialistMuted','Connect existing records to a case, capture a fingerprinted evidence snapshot, then record a non-executing review decision.'));
+ const status=specialistStatus(wrap),cases=el('div');wrap.append(cases);
+ const load=async()=>{cases.replaceChildren();try{const list=await api(base+'/intelligence/cases');if(!list.length)cases.append(el('p','specialistMuted','Create an investigation above to begin linking evidence.'));
+ for(const c of list.slice(0,30)){const card=el('details','specialistRecord');card.append(el('summary',null,(c.title||'Investigation')+' · '+(c.link_count||0)+' links · '+(c.snapshot_count||0)+' snapshots'));const inner=el('div');evidenceText(inner,c.question);card.append(inner);const detail=el('div');card.append(detail);
+ const refreshDetail=async()=>{detail.replaceChildren();try{const d=await api(base+'/intelligence/cases/'+encodeURIComponent(c.id));detail.append(el('h3',null,'Linked evidence · '+d.links.length));
+ const map=el('div');map.style.cssText='display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0';const center=el('span','specialistMetric',c.title||'Case');map.append(center);for(const l of d.links){const chip=el('span','specialistRecord',l.record?.label||l.record_id);chip.title=l.record_type+' · '+l.record_id;map.append(el('span',null,'—'),chip)}detail.append(map);
+ for(const l of d.links){const item=el('details','specialistRecord');item.append(el('summary',null,(l.record?.label||l.record_id)+' · '+l.record_type));for(const [k,v] of Object.entries(l.record||{}))if(!['id','label'].includes(k))evidenceText(item,k.replaceAll('_',' ')+': '+specialistPreview(v));detail.append(item)}
+ const form=el('div','specialistForm');form.append(el('strong',null,'Link an existing project record'));const kind=el('select');for(const [k,label] of [['evidence_file','Uploaded evidence file'],['verify_report','Ness Verify report'],['simulation','Simulation'],['engineering_followup','Engineering follow-up'],['validation_plan','Validation plan'],['orchestration','Orchestration run'],['decision','Decision memory'],['version_review','Version review']]){const o=el('option',null,label);o.value=k;kind.append(o)}form.append(kind);const id=specialistInput(form,'Record ID','Paste the ID of an existing record');const feedback=specialistStatus(form);
+ form.append(btn('Link evidence',async()=>{feedback.textContent='Linking…';try{await json(base+'/intelligence/cases/'+encodeURIComponent(c.id)+'/links',{record_type:kind.value,record_id:id.value.trim()});feedback.textContent='Linked existing project record.';await refreshDetail();await load()}catch(e){feedback.textContent=e.message;feedback.classList.add('error')}},'btn small'));detail.append(form);
+ const snapshotBox=el('div','specialistForm');snapshotBox.append(el('strong',null,'Evidence snapshot and review'));const snapshotMsg=specialistStatus(snapshotBox);let newest=d.snapshots[0]||null;
+ snapshotBox.append(btn('Create current evidence snapshot',async()=>{snapshotMsg.textContent='Snapshotting…';try{const s=await json(base+'/intelligence/cases/'+encodeURIComponent(c.id)+'/snapshots',{});newest={id:s.id,sha256:s.sha256};snapshotMsg.textContent='Fingerprint: '+s.sha256+(s.unchanged?' · unchanged':' · new snapshot');await refreshDetail()}catch(e){snapshotMsg.textContent=e.message; snapshotMsg.classList.add('error')}},'btn small'));
+ const choice=el('select');for(const [k,label] of [['needs_evidence','Needs more evidence'],['request_investigation','Request investigation'],['defer','Defer'],['reviewed_no_action','Reviewed · no action']]){const o=el('option',null,label);o.value=k;choice.append(o)}snapshotBox.append(choice);const rationale=specialistInput(snapshotBox,'Human review rationale (15–3000 characters)','Explain the decision and remaining uncertainty','textarea');
+ snapshotBox.append(btn('Record review decision',async()=>{if(!newest){snapshotMsg.textContent='Create a snapshot first.';return}snapshotMsg.textContent='Recording…';try{await json(base+'/intelligence/cases/'+encodeURIComponent(c.id)+'/decisions',{snapshot_id:newest.id,snapshot_sha256:newest.sha256,disposition:choice.value,rationale:rationale.value});snapshotMsg.textContent='Review decision recorded. No action was executed.';await refreshDetail()}catch(e){snapshotMsg.textContent=e.message;snapshotMsg.classList.add('error')}},'btn small'));
+ detail.append(snapshotBox);const history=el('div');history.append(el('h3',null,'Review history'));for(const dec of d.decisions){const line=el('div','specialistRecord');line.append(el('strong',null,dec.disposition+' · '+dec.created_at));evidenceText(line,dec.rationale);history.append(line)}detail.append(history);
+ }catch(e){detail.append(el('p','status error',e.message))}};
+ card.append(btn('Open case evidence and decisions',refreshDetail,'btn small'));cases.append(card)}status.textContent=list.length+' saved cases.'}catch(e){status.textContent=e.message;status.classList.add('error')}};
+ wrap.append(btn('Refresh investigations',load,'btn small'));host.append(wrap);load();
+ const timeline=el('div');host.append(timeline);api(base+'/evidence-timeline').then(d=>evidenceTimeline(timeline,d)).catch(e=>timeline.append(el('p','status error','Timeline: '+e.message)));
+}
+function nessVerifyWorkspace(host,pid){
+ const base='/api/projects/'+encodeURIComponent(pid),wrap=el('section','specialistSection');wrap.append(el('h3',null,'Ness Verify · evidence review'),el('p','specialistMuted','AI-assisted source comparison is a proposed assessment, not independent fact certification. Requires your configured AI provider.'));
+ const question=specialistInput(wrap,'What should Ness compare?','Identify conflicts and evidence gaps across these project records.','textarea'),status=specialistStatus(wrap),reports=el('div');
+ const history=async()=>{reports.replaceChildren();try{const data=await api(base+'/ness-verify/reports');reports.append(el('h3',null,'Saved verification reports · '+data.length));for(const r of data.slice(0,25)){const card=el('details','specialistRecord');card.append(el('summary',null,(r.question||'Verification review')+' · '+(r.created_at||'')));const body=el('div');evidenceText(body,r.answer||'No analysis returned');body.append(el('strong',null,'Evidence referenced'));for(const source of r.sources||[])evidenceText(body,(source.filename||source.id)+' · '+source.id);for(const sim of r.simulations||[])evidenceText(body,'Modeled scenario · '+sim.id);for(const limit of r.limitations||[])evidenceText(body,'Limitation: '+limit);card.append(body);reports.append(card)}if(!data.length)reports.append(el('p','specialistMuted','No saved verification reports.'))}catch(e){reports.append(el('p','status error',e.message))}};
+ wrap.append(btn('Run Ness Verify review',async()=>{status.textContent='Reviewing available project evidence…';try{const result=await json(base+'/ness-verify/reports',{question:question.value.trim()});status.textContent='Proposed verification review saved ('+result.id+').';await history()}catch(e){status.textContent=e.message;status.classList.add('error')}},'btn primary small'),btn('Refresh verification history',history,'btn small'),reports);host.append(wrap);history();
+ const coverage=el('section','specialistSection');coverage.append(el('h3',null,'Media evidence coverage'),el('p','specialistMuted','Processing coverage indicates what has been inspected, not whether content is true.'));host.append(coverage);
+ api(base+'/reliability/media-coverage').then(d=>{const media=d.media||d.files||[];if(!media.length){coverage.append(el('p','specialistMuted','No media coverage records.'));return}for(const m of media.slice(0,30)){const card=el('details','specialistRecord');card.append(el('summary',null,m.filename||m.file_id||'Media record'));for(const [k,v] of Object.entries(m))if(k!=='filename')evidenceText(card,k.replaceAll('_',' ')+': '+specialistPreview(v));coverage.append(card)}}).catch(e=>coverage.append(el('p','status error',e.message)));
+}
+
+function specialistActionForm(host,name,pid,reload){
+ if(state.teamMode)return;
+ const base='/api/projects/'+encodeURIComponent(pid);
+ const post=async(path,payload,notice)=>{notice.textContent='Submitting…';try{await json(base+path,payload);notice.classList.remove('error');notice.textContent='Saved. Reloading real project records…';await reload()}catch(e){notice.classList.add('error');notice.textContent=e.message}};
+ if(name==='Investigation'){
+  const form=el('div','specialistForm'),title=el('strong',null,'Create an evidence investigation'),a=el('input'),q=el('textarea'),msg=el('p','status');a.placeholder='Investigation title (5–140 characters)';q.placeholder='Evidence question (12–1500 characters)';form.append(title,a,q,btn('Create investigation',()=>post('/intelligence/cases',{title:a.value,question:q.value},msg),'btn primary small'),msg);host.append(form);
+ }else if(name==='AI Council'){
+  const form=el('div','specialistForm'),q=el('textarea'),msg=el('p','status');q.placeholder='What should the Council evaluate using the project evidence?';form.append(el('strong',null,'Run three focused AI review passes'),el('p','specialistMuted','Uses your configured model, not three independent providers. Requires a working AI connection.'),q,btn('Run Council review',()=>post('/ai-council/reports',{question:q.value},msg),'btn primary small'),msg);host.append(form);
+ }else if(name==='Afterlight'){
+  const form=el('div','specialistForm'),msg=el('p','status');form.append(el('strong',null,'Evidence recheck'),el('p','specialistMuted','Starts a real local extracted-text comparison job. It is not continuous monitoring.'),btn('Run evidence recheck',()=>post('/afterlight/run',{},msg),'btn primary small'),msg);host.append(form);
+ }
+}
+function openSpecialist(name,requestedProjectId){
+ const root=$('#content');root.replaceChildren();header(name,'Advanced tools / '+name);
+ root.append(shell(name,'Detailed specialist workspace · current VERYNTH design'));
+ const panel=el('div','card stack');panel.style.marginTop='24px';panel.append(btn('← All advanced tools',()=>chooseView('advanced'),'btn small'));
+ const adapter=nativeToolAdapters[name];if(!adapter){panel.append(el('p','sub','Specialist unavailable.'));root.append(panel);return}
+ if(state.teamMode&&!adapter.teamKey){panel.append(el('p','sub','This specialist is not available to team members.'));root.append(panel);return}
+ const picker=el('select');picker.setAttribute('aria-label','Select a project');const status=el('p','status'),results=el('div','specialistDashboard'),actions=el('div','specialistControls');
+ const populate=items=>{picker.replaceChildren();for(const p of items){const o=el('option',null,p.name||p.title||p.id);o.value=p.id;picker.append(o)}if(requestedProjectId&&items.some(p=>p.id===requestedProjectId))picker.value=requestedProjectId;else if(state.currentProject&&items.some(p=>p.id===state.currentProject.id))picker.value=state.currentProject.id};
+ const load=async()=>{
+  if(!picker.value)return;status.classList.remove('error');status.textContent='Loading saved project records…';results.replaceChildren();actions.replaceChildren();
+  const pid=picker.value,base='/api/projects/'+encodeURIComponent(pid),spec=state.teamMode?[[adapter.label,null]]:(specialistViews[name]||[[adapter.label,adapter.endpoint]]);
+  const requestedView=root;const records=[];for(const [label,path] of spec){try{
+    const url=state.teamMode?tpath('/projects/'+encodeURIComponent(pid)+'/specialists/'+adapter.teamKey):base+path;
+    const data=await api(url);records.push({label,data,count:specialistItems(data).length});
+   }catch(e){records.push({label,error:e.message,count:0})}}
+  if($('#content')!==requestedView)return;const success=records.filter(x=>!x.error);if(!success.length){status.textContent='Unable to load saved records: '+records.map(x=>x.error).join('; ');status.classList.add('error');return}
+  status.textContent='Loaded '+success.length+' record groups. Data comes from authenticated project APIs.';
+  const metrics=el('div','specialistMetrics');for(const r of success){const tile=el('div','specialistMetric');tile.append(el('strong',null,String(r.count)),el('small',null,r.label));metrics.append(tile)}results.append(metrics);
+  specialistChart(results,success.map(x=>({name:x.label,count:x.count})));
+  for(const r of records){if(r.error){results.append(el('p','status error',r.label+': '+r.error));continue}specialistRenderSection(results,r.label,r.data)}
+  actions.append(btn('Refresh records',load,'btn small'),btn('Copy results',()=>navigator.clipboard?.writeText(JSON.stringify(success.map(({label,data})=>({label,data})),null,2)).catch(()=>{}),'btn small'));
+  // Cross-specialist navigation reuses the selected project without crossing team permissions.
+  const related=el('div','specialistForm');
+  related.append(el('h3',null,'Continue with this project'),
+    el('p','specialistMuted','Open another specialist with the same project selected. No records are copied or modified.'));
+  const relatedActions=el('div','specialistControls');
+  for(const [other] of specialistTools){
+   if(other===name)continue;
+   const next=nativeToolAdapters[other];
+   if(!next||(state.teamMode&&!next.teamKey))continue;
+   relatedActions.append(btn(other,()=>openSpecialist(other,pid),'btn small'));
+  }
+  related.append(relatedActions);
+  const exportBtn=btn('Export specialist evidence index',()=>{
+   const payload={
+    format:'verynth-specialist-evidence-index-v1',
+    exported_at:new Date().toISOString(),
+    project_id:pid,
+    specialist:name,
+    note:'Snapshot of retrieved API responses, not independent verification or an evidence signature.',
+    record_groups:records.map(r=>r.error?{label:r.label,error:r.error}:{label:r.label,count:r.count,data:r.data})
+   };
+   const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+   const url=URL.createObjectURL(blob),a=document.createElement('a');
+   a.href=url;a.download='verynth-'+name.toLowerCase().replace(/[^a-z0-9]+/g,'-')+'-evidence-index.json';
+   document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  },'btn small');
+  related.append(exportBtn);
+  results.append(related);
+
+  specialistActionForm(results,name,pid,load);
+  if(name==='Reality Twin'&&!state.teamMode)twinInteractiveWorkspace(results,pid,load);
+  if(name==='Investigation'&&!state.teamMode)investigationWorkspace(results,pid);
+  if(name==='Ness Verify'&&!state.teamMode)nessVerifyWorkspace(results,pid);
+  if(name==='Engineering review'&&!state.teamMode)engineeringInteractiveWorkspace(results,pid,load);
+  if(name==='AI Council'&&!state.teamMode)councilDetailedWorkspace(results,pid);
+  if(name==='Meta Model Lab'&&!state.teamMode)metaModelDetailedWorkspace(results,pid);
+  if(name==='Afterlight'&&!state.teamMode)afterlightDetailedWorkspace(results,pid,load);
+ };
+ const button=btn('Open specialist workspace',load,'btn primary small');button.disabled=true;
+ panel.append(el('strong',null,adapter.label),el('p','fine','Detailed records, charts and existing specialist actions. All displayed data is retrieved from this project.'),picker,button,status,actions,results);root.append(panel);
+ if(state.teamMode){if(!state.currentWorkspace){status.textContent='Select a shared workspace first.';return}status.textContent='Loading authorized shared projects…';api(tpath('/projects')).then(items=>{populate(items);button.disabled=!items.length;status.textContent=items.length?'Choose a shared project.':'No linked shared projects.';if(requestedProjectId&&items.some(p=>p.id===requestedProjectId))load()}).catch(e=>{status.textContent=e.message;status.classList.add('error')})}
+ else{populate(state.projects||[]);button.disabled=!picker.options.length;if(!picker.options.length)status.textContent='Create a project first.';else if(requestedProjectId&&(state.projects||[]).some(p=>p.id===requestedProjectId))load()}
+}
+
+function toolGallery(root,compact=false){
+ const search=el('input','search');search.type='search';search.placeholder='Search advanced tools…';search.setAttribute('aria-label','Search advanced tools');root.append(search);
+ const grid=el('div','toolGrid');root.append(grid);
+ const renderCards=()=>{grid.replaceChildren();specialistTools.filter(t=>(!state.teamMode||nativeToolAdapters[t[0]]?.teamKey)&&t.join(' ').toLowerCase().includes(search.value.toLowerCase())).forEach(([name,glyph,description])=>{
+ const b=el('button','toolCard');b.type='button';b.append(el('span','toolGlyph',glyph),el('strong',null,name),el('small',null,description));b.onclick=()=>openSpecialist(name);grid.append(b)});
+ if(!grid.children.length)grid.append(el('p','fine','No matching advanced tools.'));
+ };search.oninput=renderCards;renderCards();
+ if(!compact)root.append(el('p','toolInfo','Detailed specialist dashboards use saved project evidence. Owner-only actions are clearly labeled; shared projects remain permission-scoped.'));
+}
+function advancedPage(root){
+ header('Advanced tools','Workspace / Advanced');
+ root.append(shell('Advanced intelligence','Choose a specialist workflow without leaving VERYNTH.'));
+ toolGallery(root);
+}
+async function accountPage(root){
+  header('Account & settings','Workspace / Account');
+  root.append(shell('Your VERYNTH account','Your profile, privacy and security — without leaving the workspace.'));
+  const profile=el('div','card stack');profile.style.marginTop='24px';profile.append(el('h2',null,'Profile'));
+  let status=null;
+  try{status=state.teamMode?await api('/api/team/me'):await api('/auth/status');
+    profile.append(el('p','sub',state.teamMode?'Team member · '+status.display_name:'Personal owner account · '+(status.authenticated?'Signed in':'Sign-in required')));
+  }catch(e){profile.append(el('p','status error',e.message))}
+  if(state.teamMode&&status){
+    const name=field(profile,'Display name','text',status.display_name||'');
+    const message=el('p','status');profile.append(btn('Save profile',async()=>{
+      try{await api('/api/team/profile',{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({display_name:name.value})});message.textContent='Profile saved in VERYNTH.';state.me.display_name=name.value;refreshNotificationCount()}
+      catch(e){message.textContent=e.message;message.classList.add('error')}
+    },'btn primary small'),message);
+  }else profile.append(el('p','fine','Owner profile editing requires the personal account backend. No unsupported changes will be shown as saved.'));
+  root.append(profile);
+  const security=el('div','card stack');security.style.marginTop='16px';security.append(el('h2',null,'Security'));
+  if(state.teamMode){
+    const current=field(security,'Current password','password'),next=field(security,'New password (12+ characters)','password');
+    const confirm=field(security,'Confirm new password','password'),message=el('p','status');
+    security.append(btn('Change password',async()=>{if(next.value!==confirm.value){message.textContent='Passwords do not match.';return}
+      try{await json('/api/team/auth/change-password',{current_password:current.value,new_password:next.value});current.value='';next.value='';confirm.value='';message.textContent='Password changed. Other sessions signed out.';refreshNotificationCount()}
+      catch(e){message.textContent=e.message;message.classList.add('error')}
+    },'btn primary small'),message);
+  }else security.append(el('p','fine','Personal owner password and recovery settings are managed by the existing owner authentication system.'));
+  security.append(btn('Sign out',async()=>{try{await api(state.teamMode?'/api/team/auth/logout':'/auth/logout',{method:'POST'});location.assign(state.teamMode?'/team/login':'/auth/login')}catch(e){showModal('Sign-out error',box=>box.append(el('p','status error',e.message)))}},'btn small'));
+  root.append(security);
+  const preferences=el('div','card stack');preferences.style.marginTop='16px';preferences.append(el('h2',null,'Notifications'));
+  preferences.append(el('p','sub','Account and collaboration confirmations stay inside VERYNTH. Email invitations require a configured mail provider.'));
+  preferences.append(btn('Open notification center',openNotifications,'btn small'));
+  root.append(preferences);
+}
+
+function home(root){header('Home','Welcome');root.append(shell('Your work, in one place.','Investigate, create and collaborate without the clutter.'));const homeAsk=el('div','composer');homeAsk.style.marginTop='26px';const askLabel=el('div','eyebrow','✦ ASK NESS');askLabel.style.margin='4px 9px 8px';homeAsk.append(askLabel);const homeText=el('textarea');homeText.placeholder='What would you like Ness to help you understand?';homeText.style='width:100%;border:0;background:transparent;min-height:66px;resize:vertical;outline:none';homeAsk.append(homeText);const homeBottom=el('div','composeBottom');const pick=el('select');pick.style.maxWidth='240px';if(!state.projects.length){const opt=el('option',null,'Create a project first');opt.value='';pick.append(opt)}state.projects.forEach(p=>{const opt=el('option',null,p.name);opt.value=p.id;pick.append(opt)});homeBottom.append(pick);homeBottom.append(btn('＋ Add files',()=>{const project=state.projects.find(p=>p.id===pick.value);if(!project)return newProject();state.currentProject=project;chooseView('project',project);$('#filePicker').click()},'btn small'));homeBottom.append(el('span','spacer'));const askAction=async()=>{const project=state.projects.find(p=>p.id===pick.value);if(!project)return newProject();const question=homeText.value.trim();if(!question){chooseView('project',project);return}chooseView('project',project);try{await json('/api/projects/'+project.id+'/ask',{question});await projectPageRefresh()}catch(e){showModal('Ness connection',box=>box.append(el('p','sub',e.message)))}};homeBottom.append(btn('Ask Ness ↑',askAction,'btn primary small'));homeAsk.append(homeBottom);root.append(homeAsk);const tiles=el('div','tiles');tiles.style.marginTop='25px';[{icon:'✦',name:'Ask Ness',caption:'Start from a project',go:()=>state.projects.length?chooseView('project',state.projects[0]):newProject()},{icon:'◫',name:'My projects',caption:'Continue where you left off',go:()=>chooseView('projects')},{icon:'♧',name:'Collaborate',caption:'Work with people and shared evidence',go:()=>chooseView('collaborate')}].forEach(a=>{const x=el('button','tile');x.append(el('span','glyph',a.icon),el('strong',null,a.name),el('span',null,a.caption));x.onclick=a.go;tiles.append(x)});root.append(tiles);root.append(section('Continue working',btn('View all →',()=>chooseView('projects'),'btn plain small')));const g=el('div','projectGrid');if(state.projects.length){state.projects.slice(0,4).forEach(p=>g.append(projectCard(p)))}else{g.append(el('div','empty',state.teamMode?'Your shared workspaces are under Collaborate.':'No projects yet. Create a project to start an investigation.'))}root.append(g)}
+function projectsPage(root){header('Projects','Workspace / Projects');root.append(shell('Your projects','Every conversation, file and saved result stays connected.'));root.append(section('Saved projects',btn('＋ Create project',newProject,'btn primary small')));const g=el('div','projectGrid');state.projects.forEach(p=>g.append(projectCard(p)));if(!state.projects.length)g.append(el('div','empty',state.teamMode?'Private projects are only available to the owner.':'You have no saved projects yet.'));root.append(g)}
+
+// User-confirmed read-only workflow planning; no automatic model calls or writes.
+async function renderNessWorkflows(target,pid){
+ const panel=el('div','card stack');panel.append(el('h2',null,'Ness · Intelligent workflows'),el('p','sub','Describe your goal. Ness identifies likely domains and proposes real, read-only project tools. Review the plan before execution.'));
+ const input=el('textarea');input.placeholder='What should Ness investigate across this project?';input.style.width='100%';input.rows=3;
+ const status=el('p','status'),preview=el('div','stack'),history=el('div','stack');
+ const make=btn('Create execution plan',async()=>{status.textContent='Building plan…';preview.replaceChildren();try{const plan=await json('/api/projects/'+encodeURIComponent(pid)+'/ness-workflows/plan',{question:input.value});status.textContent='Plan ready. Domain detection is heuristic, not a model conclusion.';
+ preview.append(el('strong',null,'Likely domains: '+plan.domains.map(x=>x.domain).join(', ')),el('p','fine',plan.limits));
+ plan.tools.forEach(t=>preview.append(el('p','fine','• '+t.description)));
+ preview.append(btn('Confirm and run read-only tools',async()=>{status.textContent='Retrieving real project records…';try{const result=await json('/api/projects/'+encodeURIComponent(pid)+'/ness-workflows/execute',{plan_id:plan.plan_id});status.textContent='Completed. No files or settings changed.';preview.replaceChildren();const pre=el('pre');pre.textContent=JSON.stringify(result,null,2);pre.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;max-height:55vh;overflow:auto';preview.append(pre);await loadHistory()}catch(e){status.textContent=e.message;status.classList.add('error')}},'btn primary small'));
+ }catch(e){status.textContent=e.message;status.classList.add('error')}},'btn primary');
+ panel.append(input,make,status,preview,el('h3',null,'Previous workflows'),history);target.append(panel);
+ async function loadHistory(){history.replaceChildren();try{const data=await api('/api/projects/'+encodeURIComponent(pid)+'/ness-workflows/history');if(!data.items.length){history.append(el('p','fine','No workflows yet.'));return}data.items.forEach(item=>{const row=el('div','listRow');const info=el('div');info.append(el('strong',null,item.question),el('small',null,item.status+' · '+formatDate(item.created_at)));row.append(info,btn('View results',async()=>{try{const data=await api('/api/projects/'+encodeURIComponent(pid)+'/ness-workflows/'+encodeURIComponent(item.id));showModal('Ness workflow results',box=>{const pre=el('pre');pre.textContent=JSON.stringify(data,null,2);pre.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;max-height:60vh;overflow:auto';box.append(pre)})}catch(e){status.textContent=e.message}},'btn small'));history.append(row)})}catch(e){history.append(el('p','status error',e.message))}}
+ await loadHistory();
+}
+
+function newProject(){if(state.teamMode)return showModal('Personal projects',box=>box.append(el('p','sub','Invited collaborators use shared projects through Collaborate.')));showModal('New project',(box,close)=>{const name=field(box,'Project name');box.append(btn('Create project',async()=>{try{const p=await json('/api/projects',{name:name.value.trim()});state.projects.unshift(p);close();chooseView('project',p)}catch(e){box.append(el('p','status error',e.message))}},'btn primary'))})}
+function projectPage(root){const p=state.currentProject;if(!p)return chooseView('projects',null,false);header(p.name,'Projects /');const frame=el('div','workShell');const h=el('div','workHeader');const a=el('div');a.append(el('div','eyebrow','PRIVATE PROJECT'),el('h1','heading',p.name),el('p','sub','Ask Ness, examine evidence, and keep decisions together.'));h.append(a,btn('＋ Add files',()=>$('#filePicker').click(),'btn'));frame.append(h);const tabs=el('div','tabs');[['conversation','Conversation'],['files','Files & evidence'],['activity','Activity'],['orchestration','Ness workflows']].forEach(([k,v])=>{const b=btn(v,()=>{state.projectTab=k;render()},'');b.classList.toggle('active',state.projectTab===k);tabs.append(b)});frame.append(tabs);const view=el('div');view.id='projectBody';frame.append(view);root.append(frame);projectPageRefresh()}
+async function projectPageRefresh(){const p=state.currentProject;if(!p||state.view!=='project')return;const target=$('#projectBody');target.replaceChildren();try{const data=await api('/api/projects/'+encodeURIComponent(p.id));if(state.projectTab==='orchestration'){renderNessWorkflows(target,p.id);return}if(state.projectTab==='conversation'){const history=el('div','conversation');history.id='projectHistory';if(!data.messages.length)history.append(el('div','empty','Ask Ness a question, or attach a file to begin.'));data.messages.forEach(m=>history.append(bubble(m.role==='user'?'You':'Ness',m.body,m.created_at,m.role==='user')));target.append(history);target.append(buildComposer('project'));setTimeout(()=>{history.scrollTop=history.scrollHeight},0)}else if(state.projectTab==='files'){const stack=el('div','card stack');stack.append(section('Project files',btn('＋ Upload',()=>$('#filePicker').click(),'btn small')));if(!data.files.length)stack.append(el('div','empty','No files uploaded yet.'));data.files.forEach(f=>stack.append(fileRow(f,'/api/projects/'+encodeURIComponent(p.id)+'/files/'+encodeURIComponent(f.id)+'/download')));target.append(stack)}else{const act=await api('/api/projects/'+encodeURIComponent(p.id)+'/activity').catch(()=>null);target.append(el('div','card',act?'Activity and investigation history are saved with this project. Open the original specialist tools to review detailed audit records.':'Saved project activity is not available.'));target.append(btn('Original tools',()=>location.assign('/classic'),'btn small'))}}catch(e){target.append(el('div','authNotice',e.message))}}
+function bubble(name,body,time,me=false,files=[]){const x=el('article','bubble'+(me?' me':''));x.append(el('div','bubbleHead',name),el('div','bubbleBody',body||''));files.forEach(f=>x.append(attachmentView(f)));if(name==='Ness'&&'speechSynthesis' in window){x.append(btn('♫ Listen to Ness',()=>{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(body||'');u.rate=1;speechSynthesis.speak(u)},'btn plain small'))}if(time)x.append(el('div','bubbleTime',formatDate(time)));return x}
+function fileRow(f,url){const row=el('div','listRow'),icon=el('span','projectIcon',f.mime?.startsWith('image/')?'▧':f.mime?.startsWith('audio/')?'◉':f.mime?.startsWith('video/')?'▷':'▤'),info=el('div');info.append(el('strong',null,f.filename),el('small',null,[fileSize(f.size),f.project_name||''].filter(Boolean).join(' · ')));row.append(icon,info,btn('Download',()=>location.assign(url),'btn small'));
+if(!state.teamMode&&(f.mime||'').startsWith('audio/'))row.append(btn('✦ Transcribe',()=>transcribeSaved(f.id,false),'btn small'));
+return row}
+function attachmentView(f){const wrap=el('div','attach');wrap.style.display='block';const root='/api/team/workspaces/'+encodeURIComponent(state.currentWorkspace?.id||'');const url=root+'/projects/'+encodeURIComponent(f.project_id)+'/files/'+encodeURIComponent(f.file_id)+'/download';const media=root+'/chat/media/'+encodeURIComponent(f.file_id);const name=el('a',null,f.filename);name.href=url;name.target='_blank';name.rel='noopener';wrap.append(el('span',null,'▤ '),name);const mime=(f.mime||'').split(';')[0].toLowerCase();let preview;if(mime.startsWith('image/')){preview=el('img');preview.src=media;preview.alt='Shared image '+f.filename;preview.loading='lazy'}else if(mime.startsWith('video/')){preview=el('video');preview.src=media;preview.controls=true;preview.preload='metadata'}else if(mime.startsWith('audio/')){preview=el('audio');preview.src=media;preview.controls=true;preview.preload='metadata'}if(preview){wrap.append(el('div'));wrap.append(preview)}
+if(mime.startsWith('audio/')||mime.startsWith('video/'))wrap.append(btn('✦ Transcribe with Ness',()=>transcribeSaved(f.file_id,true),'btn small'));
+return wrap}
+function buildComposer(kind){const wrap=el('div','composer'),p=kind==='team'?state.pending:state.pending;const chips=el('div','chipRow');chips.id='attachChips';wrap.append(chips);const top=el('div','composeTop');const input=el('textarea');input.id='composerInput';input.placeholder=kind==='team'?'Message your team…':'Ask Ness anything about this project…';const send=btn('Send ↑',()=>sendComposer(kind),'btn primary');top.append(input,send);wrap.append(top);const bottom=el('div','composeBottom');bottom.append(btn('＋ Attach',()=>$('#filePicker').click(),'btn small'),btn('◉ Voice note',()=>toggleRecord('main'),'btn small'));if(kind==='project')bottom.append(el('span','fine','Ness uses readable project evidence; media requires analysis.'));else bottom.append(el('span','fine','Files and audio are shared with workspace members.'));wrap.append(bottom);const feedback=el('div','status');feedback.id='localStatus';wrap.append(feedback);input.onkeydown=e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendComposer(kind)}};updateChips(chips,state.pending);return wrap}
+function updateChips(target,items){target.replaceChildren();items.forEach((f,i)=>{const x=el('span','chip',f.filename||f.name||'File');x.append(btn('×',()=>{items.splice(i,1);updateChips(target,items)},''));target.append(x)})}
+async function sendComposer(kind){const input=$('#composerInput');if(!input)return;const text=input.value.trim(),files=[...state.pending];if(!text&&!files.length)return;const send=input.parentElement.querySelector('button');send.disabled=true;notify('Sending…');try{if(kind==='team'){const up=[];for(const f of files){const form=new FormData();form.append('file',f,f.name);up.push(await api(tpath('/chat/upload'),{method:'POST',body:form}))}await json(tpath('/chat'),{body:text,file_ids:up.map(f=>f.id)});state.pending=[];await teamPageRefresh()}else{const pid=state.currentProject.id;if(files.length){const form=new FormData();files.forEach(f=>form.append('files',f,f.name));await api('/api/projects/'+pid+'/files',{method:'POST',body:form})}state.pending=[];if(text)await json('/api/projects/'+pid+'/ask',{question:text});await projectPageRefresh()} }catch(e){notify(e.message,true);send.disabled=false;return}}
+function collabPage(root){header('Collaborate','Workspace / Team');root.append(shell('Work better together.','A shared conversation, people and files—all in one place.'));root.append(section('Your workspaces',state.teamMode?null:btn('＋ New workspace',newWorkspace,'btn primary small')));const grid=el('div','projectGrid');state.workspaces.filter(w=>w.kind==='team').forEach(w=>grid.append(projectCard(w,true)));if(!grid.children.length)grid.append(el('div','empty','No shared workspaces yet. Create one and invite your teammates.'));root.append(grid);root.append(section('Advanced tools',btn('View all tools',()=>chooseView('advanced'),'btn small')));toolGallery(root,true)}
+async function newWorkspace(){showModal('Create workspace',(box,close)=>{const name=field(box,'Workspace name');box.append(btn('Create workspace',async()=>{try{const w=await json('/api/collaboration/workspaces',{name:name.value.trim()});state.workspaces.unshift(w);close();chooseView('team',w)}catch(e){box.append(el('p','status error',e.message))}},'btn primary'))})}
+function teamPage(root){const w=state.currentWorkspace;if(!w)return chooseView('collaborate',null,false);header(w.name,'Collaborate /');const frame=el('div','workShell'),head=el('div','workHeader'),a=el('div');a.append(el('div','eyebrow','COLLABORATIVE WORKSPACE'),el('h1','heading',w.name),el('p','sub','A quiet space for conversation, files and decisions.'));const count=el('span','pill','Members: view People');a.append(count);head.append(a,btn('＋ Invite people',invitePeople,'btn'));frame.append(head);api(tpath('/members')).then(rows=>{if(state.view==='team'&&state.currentWorkspace?.id===w.id)count.textContent=rows.length+' member'+(rows.length===1?'':'s')}).catch(()=>{count.textContent='Member count unavailable'});const tabs=el('div','tabs');[['chat','Conversation'],['files','Shared files'],['people','People'],['tasks','Tasks'],['tools','Advanced tools']].forEach(([k,v])=>{const b=btn(v,()=>{state.teamTab=k;render()},'');b.classList.toggle('active',state.teamTab===k);tabs.append(b)});frame.append(tabs);const view=el('div');view.id='teamBody';frame.append(view);root.append(frame);teamPageRefresh()}
+async function teamPageRefresh(){if(state.view!=='team')return;const target=$('#teamBody');target.replaceChildren();try{if(state.teamTab==='tools'){target.append(section('Advanced tools'));toolGallery(target,true)}else if(state.teamTab==='chat'){const history=el('div','conversation');history.id='teamHistory';const rows=await api(tpath('/chat'));if(!rows.length)history.append(el('div','empty','Start a conversation. You can share documents, images, videos, ZIPs, or a voice note.'));rows.forEach(m=>history.append(bubble(m.actor_id===state.me?.id?'You':m.actor_name,m.body,m.created_at,m.actor_id===state.me?.id,m.attachments)));target.append(history,buildComposer('team'));setTimeout(()=>history.scrollTop=history.scrollHeight,0)}else if(state.teamTab==='files'){const box=el('div','card stack');box.append(section('Shared files',btn('＋ Upload files',()=>$('#filePicker').click(),'btn small')));const projects=await api(tpath('/projects'));let any=false;for(const p of projects){const files=await api(tpath('/projects/'+p.id+'/files'));files.forEach(f=>{any=true;box.append(fileRow(f,tpath('/projects/'+p.id+'/files/'+f.id+'/download')))})}if(!any)box.append(el('div','empty','No shared files yet. Use the conversation composer to share attachments.'));target.append(box)}else if(state.teamTab==='people'){const box=el('div','card stack');box.append(section('Workspace members',btn('＋ Invite',invitePeople,'btn primary small')));const people=await api(tpath('/members'));box.append(el('p','sub',people.length+' workspace member'+(people.length===1?'':'s')+' · accepted memberships only; pending invitations are not included.'));people.forEach(p=>{const x=el('div','listRow');x.append(el('div','initial',(p.display_name||'?')[0].toUpperCase()));const info=el('div');info.append(el('strong',null,p.display_name||'Teammate'),el('small',null,p.role));x.append(info);box.append(x)});target.append(box)}else{const box=el('div','card stack');box.append(section('Tasks',btn('＋ Add task',newTask,'btn primary small')));const tasks=await api(tpath('/tasks'));if(!tasks.length)box.append(el('div','empty','No tasks yet.'));tasks.forEach(t=>{const x=el('div','listRow'),info=el('div');info.append(el('strong',null,t.title),el('small',null,[t.status,t.priority].join(' · ')));x.append(el('span','projectIcon','✓'),info);box.append(x)});target.append(box)}}catch(e){target.append(el('div','authNotice',e.message))}}
+function newTask(){showModal('New team task',(box,close)=>{const title=field(box,'Task');box.append(btn('Add task',async()=>{try{await json(tpath('/tasks'),{title:title.value.trim(),priority:'normal',description:''});close();teamPageRefresh()}catch(e){box.append(el('p','status error',e.message))}},'btn primary'))})}
+function invitePeople(){if(!state.currentWorkspace)return chooseView('collaborate');showModal('Invite collaborators',(box,close)=>{box.append(el('p','sub','Invite someone by email. You choose their access level. Invitations are created securely; delivery requires SMTP configuration. If unavailable, securely share the one-time code.'));const email=field(box,'Email address','email');const wrapper=el('div','field'),lab=el('label',null,'Role'),select=el('select');['editor','viewer','admin'].forEach(n=>{const o=el('option',null,n.charAt(0).toUpperCase()+n.slice(1));o.value=n;select.append(o)});wrapper.append(lab,select);box.append(wrapper);box.append(btn('Create invitation',async()=>{try{const result=await json(tpath('/invitations'),{email:email.value,role:select.value});box.replaceChildren(el('h2',null,'Invitation created'),el('p','sub',result.email_sent?'Invitation submitted to your configured email provider. Inbox delivery is not guaranteed.':'Email not sent ('+result.delivery+'). Share the code securely; it expires after seven days.'));const secret=el('div','inviteCode',result.invitation_code);box.append(secret,btn('Copy invitation code',()=>navigator.clipboard.writeText(result.invitation_code),'btn primary'),el('p','fine',result.email_sent?'Your teammate can use the code sent to their email to accept at /team/login.':'Your teammate joins using /team/login and Accept invitation. Email delivery requires SMTP configuration.'))}catch(e){box.append(el('p','status error',e.message))}},'btn primary'))})}
+async function libraryPage(root){header('Library','Workspace / Library');root.append(shell('Everything you saved.','Your uploads, Ness-generated outputs and shared files.'));const input=el('input','search');input.placeholder='Search files, projects, types or indexed text…';input.value=state.librarySearch;root.append(input);const filters=el('div','miniFilters');[['all','All files'],['upload','Uploads'],['generated','Created by Ness'],['shared','Shared']].forEach(([key,label])=>{const b=btn(label,()=>{state.libraryFilter=key;render()},'btn small');b.classList.toggle('active',state.libraryFilter===key);filters.append(b)});root.append(filters);const status=el('div','status','Loading your Library…'),container=el('div','card stack');root.append(status,container);let timer;input.oninput=()=>{state.librarySearch=input.value;clearTimeout(timer);timer=setTimeout(()=>loadLibrary(container,status),200)};await loadLibrary(container,status)}
+async function loadLibrary(container,status){container.replaceChildren();try{const q=new URLSearchParams({q:state.librarySearch,kind:state.libraryFilter,limit:'200'});const result=await api('/api/team/library?'+q);status.textContent=result.total_matching+' file(s) found';if(!result.items.length){container.append(el('div','empty','No files match your search.'));return}result.items.forEach(f=>{const row=el('div','listRow'),icon=el('span','projectIcon',f.kind==='generated'?'✦':'▤'),info=el('div');info.append(el('strong',null,f.filename),el('small',null,[f.project_name,f.kind==='generated'?'Created by Ness':'Uploaded',fileSize(f.size)].filter(Boolean).join(' · ')));row.append(icon,info);const base='/api/team/library/'+(f.kind==='generated'?(f.output_type==='brief'?'reports/'+f.id:'outputs/'+f.output_type+'/'+f.id):'files/'+f.id);if(f.has_preview)row.append(btn('Preview',async()=>{try{const r=await fetch(base+'/preview',{credentials:'same-origin'});const raw=await r.text();let text=raw;try{const parsed=JSON.parse(raw);text=parsed.preview||parsed.content||parsed.text||JSON.stringify(parsed,null,2)}catch{}showModal(f.filename,box=>{const pre=el('pre');pre.textContent=String(text).slice(0,15000);pre.style='white-space:pre-wrap;overflow:auto;max-height:55vh;color:#d6eaf0';box.append(pre)})}catch(e){notify(e.message,true)}},'btn small'));row.append(btn('↓',()=>location.assign(base+'/download'),'btn small'));container.append(row)})}catch(e){status.textContent=e.message;status.classList.add('error')}}
+async function attachSelected(files,target='main'){const list=target==='floating'?state.floatPending:state.pending;for(const f of files)list.push(f);const chips=target==='floating'?$('#floatAttachments'):$('#attachChips');if(chips)updateChips(chips,list);if(target==='floating')$('#floatPanel').classList.remove('hidden')}
+function canRecord(){return !!(navigator.mediaDevices?.getUserMedia&&window.MediaRecorder)}
+async function transcribeSaved(fileId,team){
+  showModal('Ness · Audio understanding',(box,close)=>{
+    box.append(el('p','sub','The recording will be sent to the selected transcription provider. Review permissions and obtain the consent of recorded participants first.'));
+    const consent=el('input');consent.type='checkbox';consent.style.width='auto';
+    const label=el('label');label.append(consent,document.createTextNode(' I confirm transcription is permitted and everyone recorded was informed.'));
+    const selector=el('select');
+    [['auto','Auto (Meta for WAV, Groq for browser recordings)'],['meta','Meta Muse Voice'],['groq','Groq Whisper']].forEach(([v,t])=>{const o=el('option',null,t);o.value=v;selector.append(o)});
+    const meeting=el('input');meeting.type='checkbox';meeting.style.width='auto';
+    const ml=el('label');ml.append(meeting,document.createTextNode(' This is an authorized meeting recording (speaker analysis requested).'));
+    const status=el('p','status','');box.append(label,el('p','fine','Transcription provider'),selector,ml,status);
+    box.append(btn('Transcribe recording',async()=>{
+      if(!consent.checked){status.textContent='Please confirm recording permission before proceeding.';return}
+      status.textContent='Transcribing through the selected provider…';
+      try{
+        const url=team?tpath('/voice/files/'+encodeURIComponent(fileId)+'/transcribe'):'/api/voice/files/'+encodeURIComponent(fileId)+'/transcribe';
+        const result=await json(url,{consent:true,provider:selector.value,meeting_recording:meeting.checked});
+        box.replaceChildren(el('h2',null,'Saved transcript'),el('p','sub',result.provider+' · '+result.model));
+        const content=el('pre');content.textContent=result.turns?.length?result.turns.map(t=>(t.speaker||'Speaker')+' ['+Math.round((t.startMs||0)/1000)+'s] '+t.transcript).join('\n'):result.text;
+        content.style='white-space:pre-wrap;overflow:auto;max-height:40vh';box.append(content);
+        const q=el('textarea');q.placeholder='Ask Ness for notes, possible contradictions, decisions or an evidence-based opinion…';q.rows=3;
+        const answer=el('div','status');box.append(q,btn('Ask Ness about this transcript',async()=>{
+          if(q.value.trim().length<4){answer.textContent='Enter a question.';return}
+          answer.textContent='Asking Ness…';
+          try{const askUrl=team?tpath('/voice/transcripts/'+result.id+'/ask'):'/api/voice/transcripts/'+result.id+'/ask';
+            const r=await json(askUrl,{question:q.value.trim()});answer.textContent=r.answer+'\n\nAI: '+r.provider+' · '+r.model;
+          }catch(e){answer.textContent=e.message}
+        },'btn primary small'),answer);
+      }catch(e){status.textContent=e.message}
+    },'btn primary'));
+  })
+}
+async function toggleRecord(target){
+  if(state.activeRecording){notify('Finish the current voice recording first.',true);return}
+  if(!canRecord()){notify('Microphone access requires a supported browser and localhost or HTTPS.',true);return}
+  try{
+    const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+    state.stream=stream;state.recordTarget=target;state.recordChunks=[];
+    const mime=['audio/webm;codecs=opus','audio/webm','audio/mp4'].find(x=>MediaRecorder.isTypeSupported(x))||'';
+    const recorder=new MediaRecorder(stream,mime?{mimeType:mime}:{});
+    state.recorder=recorder;state.activeRecording=true;
+    const modalRoot=$('#modalRoot');modalRoot.replaceChildren();
+    const shade=el('div','modalBack'),panel=el('section','modal');
+    panel.append(el('h2',null,'Record a voice note'));
+    const status=el('p','sub','Recording…'),actions=el('div','composeBottom');
+    const clock=el('div','voiceClock','00:00');clock.setAttribute('role','timer');clock.setAttribute('aria-label','Voice recording duration');
+    let elapsed=0,segmentStart=performance.now(),clockTimer=null;
+    const displayTime=()=>{const seconds=Math.floor((elapsed+(recorder.state==='recording'?(performance.now()-segmentStart):0))/1000);clock.textContent=String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0')};
+    const stopClock=()=>{if(clockTimer!==null){clearInterval(clockTimer);clockTimer=null}};
+    clockTimer=setInterval(displayTime,250);
+    const toggle=btn('Ⅱ Pause',()=>{if(recorder.state==='recording'){elapsed+=performance.now()-segmentStart;recorder.pause();displayTime();status.textContent='Paused — nothing new is being recorded';toggle.textContent='▶ Resume'}else if(recorder.state==='paused'){segmentStart=performance.now();recorder.resume();status.textContent='Recording…';toggle.textContent='Ⅱ Pause'}},'btn small');
+    const finish=btn('■ Stop and listen',()=>{if(recorder.state!=='inactive')recorder.stop()},'btn primary small');
+    const cancel=btn('Cancel',()=>{stopClock();recorder.onstop=null;if(recorder.state!=='inactive')recorder.stop();stream.getTracks().forEach(t=>t.stop());state.activeRecording=false;state.recorder=null;modalRoot.replaceChildren()},'btn small');
+    actions.append(toggle,finish,cancel);panel.append(clock,status,actions);shade.append(panel);modalRoot.append(shade);
+    recorder.ondataavailable=e=>{if(e.data.size)state.recordChunks.push(e.data)};
+    recorder.onstop=()=>{
+      if(recorder.state==='inactive'&&status.textContent.startsWith('Recording'))elapsed+=performance.now()-segmentStart;stopClock();displayTime();
+      stream.getTracks().forEach(t=>t.stop());state.activeRecording=false;state.recorder=null;
+      const type=recorder.mimeType||'audio/webm',ext=type.includes('mp4')?'m4a':'webm';
+      const file=new File(state.recordChunks,`voice-note-${Date.now()}.${ext}`,{type});
+      const audio=el('audio');audio.controls=true;audio.preload='metadata';const objectUrl=URL.createObjectURL(file);audio.src=objectUrl;
+      status.textContent='Listen to your recording before sending.';actions.replaceChildren();panel.insertBefore(audio,actions);
+      actions.append(btn('＋ Add to message',()=>{attachSelected([file],target);URL.revokeObjectURL(objectUrl);modalRoot.replaceChildren();notify('Voice note attached. Press Send when ready.')} ,'btn primary small'));
+      actions.append(btn('↻ Re-record',()=>{URL.revokeObjectURL(objectUrl);modalRoot.replaceChildren();toggleRecord(target)},'btn small'));
+      actions.append(btn('Delete',()=>{URL.revokeObjectURL(objectUrl);modalRoot.replaceChildren()},'btn small'));
+    };
+    recorder.start(500);
+  }catch(e){notify('Microphone unavailable: '+e.message,true)}
+}
+function recordButtons(active){const b=$('#floatVoice');if(b){b.textContent=active&&state.recordTarget==='floating'?'■ Stop recording':'◉ Voice';b.classList.toggle('recording',active&&state.recordTarget==='floating')}const main=[...document.querySelectorAll('.composeBottom button')].find(x=>x.textContent.includes('Voice')||x.textContent.includes('Stop recording'));if(main){main.textContent=active&&state.recordTarget==='main'?'■ Stop recording':'◉ Voice note';main.classList.toggle('recording',active&&state.recordTarget==='main')}}
+async function floatSend(){const text=$('#floatInput').value.trim(),files=[...state.floatPending];if(!text&&!files.length)return;const p=state.currentProject;const wid=state.currentWorkspace?.id;if(state.teamMode&&!wid){$('#floatStatus').textContent='Open a shared workspace to share files or voice notes.';return}if(!state.teamMode&&!p){$('#floatStatus').textContent='Select a project first to connect Ness with your files.';return}$('#floatSend').disabled=true;$('#floatStatus').textContent='Sending…';try{if(state.teamMode){const uploaded=[];for(const f of files){const fd=new FormData();fd.append('file',f);uploaded.push(await api(tpath('/chat/upload'),{method:'POST',body:fd}))}await json(tpath('/chat'),{body:text,file_ids:uploaded.map(f=>f.id)});floatAdd('You',text||'Voice or file attachment shared with team');if(state.view==='team'&&state.teamTab==='chat')await teamPageRefresh();$('#floatStatus').textContent='Shared with your workspace. Team AI analysis is not available in this composer.'}else{if(files.length){const fd=new FormData();files.forEach(f=>fd.append('files',f));await api('/api/projects/'+p.id+'/files',{method:'POST',body:fd})}if(text){const result=await json('/api/projects/'+p.id+'/ness-floating',{question:text});floatAdd('You',text);floatAdd('Ness',result.answer||'');$('#floatStatus').textContent=result.warning||''}else{$('#floatStatus').textContent='Files saved. Audio is not transcribed automatically.';floatAdd('You','Media uploaded to project')}if(state.view==='project')await projectPageRefresh()}state.floatPending=[];$('#floatInput').value='';updateChips($('#floatAttachments'),state.floatPending)}catch(e){$('#floatStatus').textContent=e.message}finally{$('#floatSend').disabled=false}}
+function floatAdd(name,text){const list=$('#floatHistory');list.append(bubble(name,text,null,name==='You'));list.scrollTop=list.scrollHeight}
+async function floatOpen(){const panel=$('#floatPanel');panel.classList.remove('hidden');const list=$('#floatHistory');list.replaceChildren();$('#floatHint').textContent=state.teamMode?'Share files and voice notes with the team; team AI is not connected here.':'Ask Ness about your current project; add files or record a voice note.';if(!state.teamMode&&state.currentProject){try{const d=await api('/api/projects/'+state.currentProject.id+'/ness-floating');(d.messages||[]).forEach(m=>floatAdd(m.role==='assistant'?'Ness':'You',m.body))}catch(e){$('#floatStatus').textContent=e.message}}}
+$('#floatBtn').onclick=()=>$('#floatPanel').classList.contains('hidden')?floatOpen():$('#floatPanel').classList.add('hidden');$('#floatClose').onclick=()=>$('#floatPanel').classList.add('hidden');$('#floatUpload').onclick=()=>$('#floatPicker').click();$('#floatVoice').onclick=()=>toggleRecord('floating');$('#floatSend').onclick=floatSend;$('#floatInput').onkeydown=e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();floatSend()}};$('#filePicker').onchange=e=>{attachSelected([...e.target.files]);e.target.value='';if(state.view==='project'&&state.projectTab==='files'){state.projectTab='conversation';render()}if(state.view==='team'&&state.teamTab==='files'){state.teamTab='chat';render()}};$('#floatPicker').onchange=e=>{attachSelected([...e.target.files],'floating');e.target.value=''};$('#newBtn').onclick=newProject;$('#topCreate').onclick=()=>state.view==='collaborate'?newWorkspace():newProject();document.querySelectorAll('[data-nav]').forEach(b=>b.onclick=()=>chooseView(b.dataset.nav));
+refresh();
+document.getElementById('notificationBell')?.addEventListener('click',openNotifications);
+
+// Engineering Review restoration: human-gated, project-scoped workflows.
+// AI suggestions do not execute code; regression contracts are declarative checks.
+async function engineeringInteractiveWorkspace(host,pid,reload){
+ const base='/api/projects/'+encodeURIComponent(pid)+'/engineering';
+ const area=el('section','specialistSection');
+ area.append(el('h3',null,'Engineering review · evidence and decisions'),
+   el('p','specialistMuted','All proposals require human review. No code is executed, patched or deployed by these controls.'));
+ host.append(area);
+ const status=el('p','status');area.append(status);
+ const panel=el('div','specialistForm');area.append(panel);
+ let plan,suggestions,followups;
+ try{
+  [plan,suggestions,followups]=await Promise.all([
+   api(base+'/verification-plan'),api(base+'/suggestions'),api(base+'/followups')
+  ]);
+ }catch(e){status.textContent='Unable to load engineering workflow: '+e.message;status.classList.add('error');return}
+ const actions=Array.isArray(plan.actions)?plan.actions:[];
+ const reviews=Array.isArray(suggestions)?suggestions:specialistItems(suggestions);
+ const queue=Array.isArray(followups)?followups:specialistItems(followups);
+ const summary=el('div','specialistMetrics');
+ for(const [label,value] of [['Saved file actions',actions.length],['AI reviews',reviews.length],['Follow-ups',queue.length]]){
+  const metric=el('div','specialistMetric');metric.append(el('strong',null,String(value)),el('small',null,label));summary.append(metric)
+ }
+ panel.append(summary);
+ const caption=el('h3',null,'Action readiness');
+ panel.append(caption);
+ if(!actions.length)panel.append(el('p','specialistMuted','No saved file actions. Create and review a file change in your project before requesting engineering suggestions.'));
+ const actionSelect=el('select');actionSelect.setAttribute('aria-label','Saved file action');
+ for(const a of actions){const option=el('option',null,(a.filename||a.action_id)+' · '+(a.priority||'review'));option.value=a.action_id;actionSelect.append(option)}
+ if(actions.length){
+  panel.append(actionSelect);
+  const detail=el('div','specialistRecord');panel.append(detail);
+  const updateDetail=()=>{
+   const a=actions.find(x=>x.action_id===actionSelect.value);detail.replaceChildren();
+   if(!a)return;
+   detail.append(el('strong',null,'Readiness: '+a.priority),el('p','specialistMuted','Approval: '+a.approval_status));
+   for(const check of a.checks||[])detail.append(el('p',null,(check.passed===true?'✓ ':check.passed===false?'✕ ':'○ ')+check.name+' · '+(check.passed===null?'Not checked':check.passed?'Passed':'Failed')));
+   for(const step of a.next_steps||[])detail.append(el('p',null,'Next: '+step));
+  };
+  actionSelect.onchange=updateDetail;updateDetail();
+  const focus=el('textarea');focus.placeholder='Optional focus for Ness Engineering Review';focus.maxLength=1200;
+  const make=btn('Generate evidence-grounded suggestions',async()=>{
+   make.disabled=true;status.textContent='Requesting review from your configured AI provider…';
+   try{
+    await json(base+'/suggestions',{action_id:actionSelect.value,focus:focus.value});
+    status.textContent='Review saved. Refreshing…';await reload()
+   }catch(e){status.textContent=e.message;status.classList.add('error')}finally{make.disabled=false}
+  },'btn primary small');
+  panel.append(focus,make);
+ }
+ const reviewSection=el('div','specialistForm');reviewSection.append(el('h3',null,'Saved AI reviews · propose follow-ups'));area.append(reviewSection);
+ if(!reviews.length)reviewSection.append(el('p','specialistMuted','No engineering suggestions yet.'));
+ for(const r of reviews.slice(0,20)){
+  const d=el('details','specialistRecord'),heading=el('summary',null,'Review '+String(r.id||'').slice(0,9)+' · '+(r.created_at||''));d.append(heading);
+  const pre=el('p');pre.style.whiteSpace='pre-wrap';pre.textContent=r.review||'No review text';d.append(pre);
+  const kind=el('select');for(const k of ['regression_check','corrective_change','investigation']){const o=el('option',null,k.replaceAll('_',' '));o.value=k;kind.append(o)}
+  const desc=el('textarea'),expected=el('textarea'),msg=el('p','status');
+  desc.placeholder='Describe proposed follow-up (10–1600 characters)';
+  expected.placeholder='Expected result or acceptance criterion (5–1000 characters)';
+  const create=btn('Add to human review queue',async()=>{
+   create.disabled=true;msg.textContent='Saving…';
+   try{await json(base+'/followups',{review_id:r.id,kind:kind.value,description:desc.value,expected_result:expected.value});msg.textContent='Follow-up saved.';await reload()}
+   catch(e){msg.textContent=e.message;msg.classList.add('error')}finally{create.disabled=false}
+  },'btn small');
+  d.append(kind,desc,expected,create,msg);reviewSection.append(d);
+ }
+ const followSection=el('div','specialistForm');followSection.append(el('h3',null,'Human follow-up decisions'));area.append(followSection);
+ if(!queue.length)followSection.append(el('p','specialistMuted','No follow-ups queued.'));
+ for(const f of queue.slice(0,30)){
+  const d=el('details','specialistRecord');
+  d.append(el('summary',null,(f.kind||'Follow-up')+' · '+(f.status||'proposed')),
+   el('p',null,f.description||''),el('p','specialistMuted','Expected: '+(f.expected_result||'')));
+  const msg=el('p','status');
+  if(f.status==='proposed'){
+   for(const [label,decision] of [['Accept for review','accepted_for_review'],['Defer','deferred'],['Reject','rejected']]){
+    const b=btn(label,async()=>{
+     b.disabled=true;try{await json(base+'/followups/'+encodeURIComponent(f.id)+'/decision',{status:decision});await reload()}
+     catch(e){msg.textContent=e.message;msg.classList.add('error')}finally{b.disabled=false}
+    },'btn small');d.append(b)
+   }
+  }
+  if(f.status==='accepted_for_review'&&f.kind==='regression_check'){
+   const checkType=el('select'),target=el('input'),expected=el('input');
+   for(const k of ['python_constant','json_field','contains_text','not_contains_text']){const o=el('option',null,k.replaceAll('_',' '));o.value=k;checkType.append(o)}
+   target.placeholder='Target';expected.placeholder='Expected value';
+   const run=btn('Run declarative regression check',async()=>{
+    run.disabled=true;msg.textContent='Checking saved action evidence…';
+    try{const result=await json(base+'/followups/'+encodeURIComponent(f.id)+'/run-regression',{check_type:checkType.value,target:target.value,expected:expected.value});msg.textContent='Check recorded: '+(result.check?.passed===true?'Passed':result.check?.passed===false?'Failed':'See saved check');}
+    catch(e){msg.textContent=e.message;msg.classList.add('error')}finally{run.disabled=false}
+   },'btn small');
+   d.append(el('p','specialistMuted','Declarative assertion only; does not run project code. Use a supported contract type.'),checkType,target,expected,run);
+  }
+  const show=btn('View linked checks',async()=>{
+   msg.textContent='Loading checks…';
+   try{const checks=await api(base+'/followups/'+encodeURIComponent(f.id)+'/checks');msg.textContent='Saved checks: '+(Array.isArray(checks)?checks.length:0);
+    const list=el('div');for(const c of (Array.isArray(checks)?checks:[])){const detail=el('details','specialistRecord');detail.append(el('summary',null,'Check '+String(c.check_id||'').slice(0,10)+' · '+(c.passed===true?'Passed':c.passed===false?'Failed':'Unspecified')));const p=el('pre');p.textContent=JSON.stringify(c,null,2);detail.append(p);list.append(detail)}d.append(list)
+   }catch(e){msg.textContent=e.message;msg.classList.add('error')}
+  },'btn small');
+  d.append(show,msg);followSection.append(d);
+ }
+}
+
+
+// Council and Model Lab: saved outputs, no invented multi-provider evaluations.
+function councilText(parent,label,value){
+ const d=el('div','specialistRecord');d.append(el('strong',null,label));
+ const p=el('p');p.style.whiteSpace='pre-wrap';p.textContent=String(value??'Not recorded');d.append(p);parent.append(d);return d;
+}
+function councilCompare(parent,passes){
+ const items=Array.isArray(passes)?passes:[];
+ if(!items.length){parent.append(el('p','specialistMuted','No analytical passes in this report.'));return}
+ const grid=el('div','specialistMetrics');
+ for(const pass of items){const card=el('div','specialistMetric');card.style.minWidth='200px';card.style.flex='1';card.append(el('strong',null,pass.name||'Review pass'));const p=el('p');p.style.whiteSpace='pre-wrap';p.textContent=pass.assessment||'No assessment';card.append(p);grid.append(card)}
+ parent.append(grid);
+}
+function councilDetailedWorkspace(host,pid){
+ const area=el('section','specialistSection');area.append(el('h3',null,'AI Council · perspective comparison'),el('p','specialistMuted','Three calls to the same configured AI model. These are analytical perspectives, not independent expert systems or a model benchmark.'));host.append(area);
+ const status=el('p','status');area.append(status);
+ api('/api/projects/'+encodeURIComponent(pid)+'/ai-council/reports').then(reports=>{
+  if(!Array.isArray(reports)||!reports.length){area.append(el('p','specialistMuted','No saved Council reports. Use Run Council review above to create one from real evidence.'));return}
+  const select=el('select');select.setAttribute('aria-label','Council report');
+  for(const r of reports){const option=el('option',null,(r.created_at||'Saved report')+' · '+(r.question||'').slice(0,90));option.value=r.id;select.append(option)}
+  const detail=el('div','specialistForm');area.append(select,detail);
+  const render=()=>{const r=reports.find(x=>x.id===select.value);detail.replaceChildren();if(!r)return;
+   detail.append(el('h3',null,r.question||'Council review'));
+   const meta=el('p','specialistMuted','Report '+r.id+' · '+(r.created_at||''));detail.append(meta);
+   councilCompare(detail,r.perspectives);
+   councilText(detail,'Council synthesis',r.synthesis);
+   const evidence=el('details','specialistRecord');evidence.append(el('summary',null,'Evidence and simulation IDs used'));
+   for(const x of r.sources||[])evidence.append(el('p',null,(x.filename||'Source')+' · '+x.id));
+   for(const id of r.simulation_ids||[])evidence.append(el('p',null,'Simulation · '+id));
+   if(!(r.sources||[]).length&&!(r.simulation_ids||[]).length)evidence.append(el('p','specialistMuted','No source IDs recorded.'));
+   detail.append(evidence);
+   const limitations=el('details','specialistRecord');limitations.append(el('summary',null,'Limitations and human verification'));for(const x of r.limitations||[])limitations.append(el('p',null,'• '+x));detail.append(limitations);
+  };select.onchange=render;render();
+ }).catch(e=>{status.textContent='Council reports unavailable: '+e.message;status.classList.add('error')});
+}
+function metaModelDetailedWorkspace(host,pid){
+ const area=el('section','specialistSection');area.append(el('h3',null,'Meta Model Lab · saved output comparison'),el('p','specialistMuted','Inventory and compare existing outputs. This does not run independent models or measure accuracy, latency or cost.'));host.append(area);
+ const status=el('p','status');area.append(status);
+ api('/api/projects/'+encodeURIComponent(pid)+'/model-lab/saved').then(data=>{
+  const reports=Array.isArray(data.saved_council_reports)?data.saved_council_reports:[];
+  const messages=Array.isArray(data.assistant_response_records)?data.assistant_response_records:[];
+  const metrics=el('div','specialistMetrics');for(const [label,value] of [['Saved Council reports',reports.length],['Saved assistant responses',messages.length]]){const m=el('div','specialistMetric');m.append(el('strong',null,String(value)),el('small',null,label));metrics.append(m)}area.append(metrics);
+  const panel=el('div','specialistForm');area.append(panel);
+  if(!reports.length){panel.append(el('p','specialistMuted','No Council reports available for side-by-side comparison.'));return}
+  const selectA=el('select'),selectB=el('select');
+  for(const select of [selectA,selectB]){select.setAttribute('aria-label',select===selectA?'First saved Council report':'Second saved Council report');for(const r of reports){const o=el('option',null,(r.created_at||'Saved')+' · '+(r.question||'').slice(0,70));o.value=r.id;select.append(o)}}
+  if(reports.length>1)selectB.selectedIndex=1;
+  const cols=el('div','specialistMetrics');panel.append(el('h3',null,'Compare saved Council syntheses'),selectA,selectB,cols);
+  const render=()=>{cols.replaceChildren();for(const [label,select] of [['Report A',selectA],['Report B',selectB]]){const r=reports.find(x=>x.id===select.value);const card=el('div','specialistMetric');card.style.flex='1';card.style.minWidth='220px';card.append(el('strong',null,label),el('p',null,r?.question||'No question'));const p=el('p');p.style.whiteSpace='pre-wrap';p.textContent=r?.synthesis||'No synthesis';card.append(p);cols.append(card)}};
+  selectA.onchange=render;selectB.onchange=render;render();
+  panel.append(el('p','specialistMuted','Differences are shown as recorded. Repeated AI output is not independent corroboration.'));
+  const inventory=el('details','specialistRecord');inventory.append(el('summary',null,'Saved assistant response inventory ('+messages.length+')'));
+  for(const m of messages.slice(0,30))inventory.append(el('p',null,(m.created_at||'')+' · '+m.id+' · '+(m.role||'assistant')));
+  panel.append(inventory);
+ }).catch(e=>{status.textContent='Model Lab inventory unavailable: '+e.message;status.classList.add('error')});
+}
+
+
+// Afterlight operational workspace: project-scoped jobs, schedules, notices and recovery.
+// This view does not claim a durable worker or an active background scheduler.
+async function afterlightDetailedWorkspace(host,pid,reload){
+ const base='/api/projects/'+encodeURIComponent(pid)+'/afterlight';
+ const section=el('section','specialistSection');host.append(section);
+ section.append(el('h3',null,'Afterlight · monitoring and recovery'),el('p','specialistMuted','Review actual saved investigations, schedule configuration and notifications. Execution depends on the local server and its scheduler; schedules are not guaranteed to run while the server is offline.'));
+ const notice=el('p','status');section.append(notice);
+ const data=await Promise.allSettled(['jobs','schedules','notices','recovery'].map(k=>api(base+'/'+k)));
+ const values={};['jobs','schedules','notices','recovery'].forEach((k,i)=>{if(data[i].status==='fulfilled')values[k]=data[i].value;else values[k]=null});
+ const jobs=Array.isArray(values.jobs)?values.jobs:[];
+ const schedules=Array.isArray(values.schedules)?values.schedules:[];
+ const notices=Array.isArray(values.notices?.notices)?values.notices.notices:[];
+ const recovery=values.recovery;
+ const metrics=el('div','specialistMetrics');
+ for(const [label,value] of [['Investigations',jobs.length],['Running / queued',jobs.filter(j=>['running','queued'].includes(j.status)).length],['Schedules',schedules.length],['Unread notices',notices.filter(n=>!n.is_read).length]]){
+  const m=el('div','specialistMetric');m.append(el('strong',null,String(value)),el('small',null,label));metrics.append(m)
+ }
+ section.append(metrics);
+ const form=el('div','specialistForm');form.append(el('h3',null,'Start an evidence investigation'));
+ const question=el('textarea');question.placeholder='What should Afterlight investigate? (10–1500 characters)';question.maxLength=1500;
+ const start=btn('Start investigation',async()=>{start.disabled=true;notice.textContent='Submitting investigation…';try{await json(base+'/jobs',{question:question.value.trim()});notice.textContent='Investigation queued.';await reload()}catch(e){notice.textContent=e.message;notice.classList.add('error')}finally{start.disabled=false}},'btn primary small');
+ form.append(question,start);section.append(form);
+ const scheduleBox=el('div','specialistForm');scheduleBox.append(el('h3',null,'Scheduled investigations'),el('p','specialistMuted','Intervals are 15 minutes to 7 days. The server must be running for scheduled dispatch.'));
+ const sq=el('textarea');sq.placeholder='Recurring investigation question';sq.maxLength=1500;
+ const interval=el('input');interval.type='number';interval.min='15';interval.max='10080';interval.value='1440';interval.setAttribute('aria-label','Interval in minutes');
+ const scheduleBtn=btn('Create schedule',async()=>{scheduleBtn.disabled=true;notice.textContent='Saving schedule…';try{await json(base+'/schedules',{question:sq.value.trim(),interval_minutes:Number(interval.value)});await reload()}catch(e){notice.textContent=e.message;notice.classList.add('error')}finally{scheduleBtn.disabled=false}},'btn small');
+ scheduleBox.append(sq,el('p','specialistMuted','Interval in minutes'),interval,scheduleBtn);
+ for(const sc of schedules){const row=el('details','specialistRecord');row.append(el('summary',null,(sc.enabled?'Enabled':'Paused')+' · every '+sc.interval_minutes+' min · '+String(sc.question||'').slice(0,95)));
+  row.append(el('p','specialistMuted','Next planned run: '+(sc.next_run_at||'Not set')));
+  const toggle=btn(sc.enabled?'Pause schedule':'Enable schedule',async()=>{toggle.disabled=true;try{await json(base+'/schedules/'+encodeURIComponent(sc.id)+'/toggle',{enabled:!Boolean(sc.enabled)});await reload()}catch(e){notice.textContent=e.message;notice.classList.add('error')}finally{toggle.disabled=false}},'btn small');row.append(toggle);scheduleBox.append(row)
+ }
+ if(!schedules.length)scheduleBox.append(el('p','specialistMuted','No recurring schedules saved.'));
+ section.append(scheduleBox);
+ // Operational charts use saved investigation records, not synthetic monitoring data.
+ const monitoring=el('div','specialistForm');monitoring.append(el('h3',null,'Investigation status distribution'));
+ const statuses=['queued','running','completed','failed','interrupted'];
+ const counts=statuses.map(k=>jobs.filter(j=>String(j.status||'').toLowerCase()===k).length);
+ const maximum=Math.max(1,...counts);
+ const graph=el('div');graph.setAttribute('role','img');graph.setAttribute('aria-label','Investigation counts by status: '+statuses.map((k,i)=>k+' '+counts[i]).join(', '));
+ for(let i=0;i<statuses.length;i++){
+  const r=el('div');r.style.cssText='display:grid;grid-template-columns:92px 1fr 34px;align-items:center;gap:10px;margin:8px 0';
+  const name=el('span','specialistMuted',statuses[i]);
+  const track=el('div');track.style.cssText='height:12px;border-radius:8px;background:var(--border,rgba(128,128,128,.18));overflow:hidden';
+  const fill=el('div');fill.style.cssText='height:100%;width:'+((counts[i]/maximum)*100)+'%;background:var(--accent,#21b7a8);border-radius:8px';
+  track.append(fill);r.append(name,track,el('strong',null,String(counts[i])));graph.append(r)
+ }
+ monitoring.append(graph);
+ const chronological=jobs.filter(j=>j.created_at||j.updated_at).slice().sort((a,b)=>String(b.created_at||b.updated_at).localeCompare(String(a.created_at||a.updated_at))).slice(0,15);
+ if(chronological.length){
+  const timeline=el('details','specialistRecord');timeline.append(el('summary',null,'Recent investigation activity · '+chronological.length+' entries'));
+  for(const j of chronological){const item=el('div');item.style.cssText='border-left:2px solid var(--accent,#21b7a8);padding:5px 0 8px 12px;margin:7px 0';
+   item.append(el('strong',null,String(j.status||'Unknown')),el('p','specialistMuted',(j.created_at||j.updated_at||'')+' · '+String(j.question||j.id||'Investigation').slice(0,130)));timeline.append(item)}
+  monitoring.append(timeline)
+ }
+ section.append(monitoring);
+ const jobsBox=el('div','specialistForm');jobsBox.append(el('h3',null,'Investigation history and recovery'));
+ for(const j of jobs.slice(0,50)){
+  const d=el('details','specialistRecord');d.append(el('summary',null,(j.status||'Unknown')+' · '+String(j.question||j.id||'Investigation').slice(0,100)));
+  for(const [label,value] of [['Created',j.created_at],['Updated',j.updated_at],['Error',j.error],['Result',j.result_json||j.result]]){
+   if(value===null||value===undefined||value==='')continue;
+   const p=el('p');p.style.whiteSpace='pre-wrap';p.textContent=label+': '+(typeof value==='string'?value:JSON.stringify(value,null,2));d.append(p)
+  }
+  if(['failed','interrupted'].includes(j.status)){
+   const retry=btn('Recover failed investigation',async()=>{retry.disabled=true;notice.textContent='Requesting recovery…';try{await json(base+'/jobs/'+encodeURIComponent(j.id)+'/recover',{});await reload()}catch(e){notice.textContent=e.message;notice.classList.add('error')}finally{retry.disabled=false}},'btn small');d.append(retry)
+  }
+  jobsBox.append(d)
+ }
+ if(!jobs.length)jobsBox.append(el('p','specialistMuted','No investigations saved yet.'));
+ if(recovery&&typeof recovery==='object'){
+  const detail=el('details','specialistRecord');detail.append(el('summary',null,'Recovery lineage and retry history'));
+  const recoveryEntries=Array.isArray(recovery)?recovery:specialistItems(recovery);
+  if(recoveryEntries.length&&recoveryEntries[0]!==recovery){
+   for(const entry of recoveryEntries.slice(0,30)){
+    const record=el('div','specialistRecord');
+    for(const [label,keys] of [['Recovery ID',['id','recovery_id']],['Original job',['original_job_id','source_job_id','job_id']],['Retry job',['retry_job_id','new_job_id']],['Status',['status','outcome']],['Time',['created_at','updated_at']],['Reason',['reason','error']]]){
+     const key=keys.find(k=>entry[k]!==undefined&&entry[k]!==null);
+     if(key)record.append(el('p',null,label+': '+String(entry[key])))
+    }
+    const extra=el('details');extra.append(el('summary',null,'Complete recovery record'));
+    const p=el('pre');p.style.whiteSpace='pre-wrap';p.style.overflowWrap='anywhere';p.textContent=JSON.stringify(entry,null,2);extra.append(p);record.append(extra);detail.append(record)
+   }
+  }else{
+   const p=el('pre');p.style.whiteSpace='pre-wrap';p.style.overflowWrap='anywhere';p.textContent=JSON.stringify(recovery,null,2);detail.append(p)
+  }
+  jobsBox.append(detail)
+ }
+ section.append(jobsBox);
+ const notifications=el('div','specialistForm');notifications.append(el('h3',null,'Afterlight notices'));
+ for(const n of notices.slice(0,50)){
+  const d=el('details','specialistRecord');d.append(el('summary',null,(n.is_read?'Read':'Unread')+' · '+(n.title||n.kind||'Notice')));
+  for(const key of ['message','body','created_at'])if(n[key])d.append(el('p',null,String(n[key])));
+  if(!n.is_read){const mark=btn('Mark as read',async()=>{mark.disabled=true;try{await json(base+'/notices/'+encodeURIComponent(n.id)+'/read',{});await reload()}catch(e){notice.textContent=e.message;notice.classList.add('error')}finally{mark.disabled=false}},'btn small');d.append(mark)}
+  notifications.append(d)
+ }
+ if(!notices.length)notifications.append(el('p','specialistMuted','No monitoring notices yet.'));
+ section.append(notifications);
+ const unavailable=Object.entries(values).filter(([,v])=>v===null).map(([k])=>k);
+ if(unavailable.length){const warning=el('p','status error','Some Afterlight records could not load: '+unavailable.join(', '));section.prepend(warning)}
+}
+
+</script></body></html>

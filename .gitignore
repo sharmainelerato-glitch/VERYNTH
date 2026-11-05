@@ -1,0 +1,81 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+*secret*.json
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Databases
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+
+# Private user data
+uploads/
+data/
+storage/
+private/
+instance/
+backups/
+*.log
+
+# Deployment backups
+*.backup
+*.bak
+*.before_*
+*.before-*
+*.orig
+*~
+main.before-*.py
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Node dependencies
+node_modules/
+dist/
+
+# Additional deployment backups
+*.backup*
+*.bak*
+*.zip
+*.tar
+*.tar.gz
+*.old
+*backup*
+
+# Local credentials and certificates
+.aws/
+.ssh/
+*.env
+*.pem
+*.key
+
+# Private generated files
+*.db*
+*.sqlite*
+*.sqlite3*
+
+# Editor temporary files
+*.swp
+*.swo
+.*.swp
